@@ -5,7 +5,7 @@
     */
 
 get_header();
-// Retrieve ACF fields for the front page
+// Retrieve ACF fields for the about-us page
 $img1 = get_field('img1');
 $text_about_catering = get_field('text_about_catering');
 $img2 = get_field('img2');
