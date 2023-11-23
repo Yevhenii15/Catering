@@ -11,28 +11,89 @@
     }
     add_action( 'init', 'remove_gutenberg' );
 
-// Display quantity input for simple products
-function display_quantity_input_for_simple_products($input, $product) {
-  // Check if the product is a simple product
-  if ($product->is_type('simple')) {
-      // Set the default quantity to 1
-      $input = sprintf(
-          '<input type="number" step="%s" min="%s" max="%s" name="%s" value="%s" title="%s" class="%s" inputmode="%s" />',
-          esc_attr($product->get_stock_quantity() ? apply_filters('woocommerce_quantity_input_step', '1', $product) : 0.1),
-          esc_attr(1), // Set the minimum quantity to 1
-          esc_attr($product->get_max_purchase_quantity()),
-          esc_attr($input['name']),
-          esc_attr(1), // Set the default quantity to 1
-          esc_html__('Qty', 'woocommerce'),
-          esc_attr(isset($input['class']) ? $input['class'] : 'input-text qty text'),
-          esc_attr(apply_filters('woocommerce_quantity_input_inputmode', 'numeric', $product))
-      );
-  }
+    // title of single product page is not displaying write code to display title of single product page
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 9);
+    // I don't whant to display word sale on single product page
+    remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+    // I don't whant to display sku, categories, tags on single product page
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
-  return $input;
-}
+    function display_menu_items_on_product_page() {
+        // Get the current post object
+        global $post;
+    
+        // Check if it's a single product page
+        if (is_product()) {
+            // Query the custom post type
+            $menu_items = new WP_Query(array(
+                'post_type' => 'menu_item', // Replace with your custom post type
+                'posts_per_page' => -1,
+                'post_status' => 'publish',
+            ));
+    
+            // Check if there are menu items
+            if ($menu_items->have_posts()) {
+                echo '<div class="menu-items">';
+                echo '<h3>This menu includes:</h3>';
 
-add_filter('woocommerce_quantity_input', 'display_quantity_input_for_simple_products', 10, 2);
+                // Loop through the menu items
+                while ($menu_items->have_posts()) {
+                    // Set up the post data
+                    $menu_items->the_post();
+    
+                    // Get custom fields
+                    $item_image = get_field('item_image'); // Replace with the actual field name
+                    $description = get_field('description'); // Replace with the actual field name
+    
+                    // Display title
+                    echo '<h4>' . get_the_title() . '</h4>';
 
+                    // Display image if available
+                    if ($item_image) {
+                        echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title()) . '">';
+                    }
+    
+                    // Display description if available
+                    if ($description) {
+                        echo '<p>' . esc_html($description) . '</p>';
+                    }
+    
+                }
+    
+                echo '</div>';
+            }
+    
+            // Reset the post data
+            wp_reset_postdata();
+        }
+    }
+    
+    // Hook to display custom post type content on single product page
+    add_action('woocommerce_after_single_product_summary', 'display_menu_items_on_product_page');
 
-  
+    // Remove upsell heading
+    function remove_upsell_heading() {
+        ?>
+        <style>
+            .upsells.products h2 {
+                display: none !important;
+            }
+            .upsells.products h2.woocommerce-loop-product__title{
+                display: block !important;
+            }
+            
+        </style>
+        <?php
+    }
+    
+    // Hook to remove upsell heading
+    add_action('wp_head', 'remove_upsell_heading');
+    
+    
+    function enqueue_custom_scripts() {
+        wp_enqueue_script('custom-script', get_template_directory_uri() . '/custom-script.js', array('jquery'), null, true);
+    }
+    add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+    
+    
+
