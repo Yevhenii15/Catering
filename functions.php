@@ -98,8 +98,22 @@
 
 
     
-    
-        
+    // Add a link to the checkout page displayed on single product page after add to cart button
+function add_checkout_link() {
+    // Check if the cart is not empty
+    if (WC()->cart->get_cart_contents_count() > 0) {
+        // Get the checkout URL
+        $checkout_url = wc_get_checkout_url();
+
+        // Display the link
+        echo '<a href="' . esc_url($checkout_url) . '" class="checkout-link button alt">Checkout</a>';
+    }
+}
+add_action('woocommerce_after_add_to_cart_button', 'add_checkout_link');
+
+
+
+  
     
     
     
