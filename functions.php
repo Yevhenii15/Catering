@@ -100,18 +100,20 @@
 
 
     
-    // Add a link to the checkout page displayed on single product page after add to cart button
-function add_checkout_link() {
-    // Check if the cart is not empty
-    if (WC()->cart->get_cart_contents_count() > 0) {
-        // Get the checkout URL
-        $checkout_url = wc_get_checkout_url();
+    add_action('template_redirect', 'redirect_to_checkout_if_cart_not_empty_single_product');
 
-        // Display the link
-        echo '<a href="' . esc_url($checkout_url) . '" class="checkout-link button alt">Checkout</a>';
+    function redirect_to_checkout_if_cart_not_empty_single_product() {
+    // Check if on a single product page
+    if (is_product() && WC()->cart->get_cart_contents_count() > 0) {
+        wp_redirect(wc_get_checkout_url());
+        exit;
     }
-}
-add_action('woocommerce_after_add_to_cart_button', 'add_checkout_link');
+    }
+
+    
+
+
+    
 
 
 

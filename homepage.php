@@ -8,31 +8,41 @@ get_header();
 $wellcome_main_text = get_field('wellcome_main_text');
 $welcome_additional_text = get_field('welcome_additional_text');
 ?>
-<body> <!-- Add body tag -->
-  <header>
-    <section class="header-section">
-      <div class="heading">
-        <h2>Your Event,<br> - Our Passion!</h2>
-        <h1>BBQ Catering</h1>
-      </div>
-      <a href="<?php echo get_site_url(); ?>/shop" class="shop-link red-border">
-        <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Top.svg" alt="">
-        <p>Menu</p>
-        <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Bottom.svg" alt="">
-      </a>
-    </section>
-  </header>
+<body>
 
-  <nav>
-    <ul>
-      <li class="button">
-        <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
-      </li>
-      <li class="button">
-        <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
-      </li>
-    </ul>
-  </nav>
+<!-- SVG Background -->
+<div class="svg-background">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 480" preserveAspectRatio="xMidYMid meet">
+  <path fill="#f3f4f5" fill-opacity="0.5" d="M0,240L80,266.7C160,293,320,347,480,336C640,325,800,251,960,218.7C1120,187,1280,197,1360,202.7L1440,208L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+</svg>
+
+
+</div>
+
+<header>
+  <section class="header-section">
+    <div class="heading">
+      <h2>Your Event,<br> - Our Passion!</h2>
+      <h1>BBQ Catering</h1>
+    </div>
+    <a href="<?php echo get_site_url(); ?>/shop" class="shop-link ">
+      <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Top.svg" alt="">
+      <p>Menu</p>
+      <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Bottom.svg" alt="">
+    </a>
+  </section>
+</header>
+
+<nav>
+  <ul>
+    <li class="button">
+      <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
+    </li>
+    <li class="button">
+      <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
+    </li>
+  </ul>
+</nav>
 
 <?php get_footer(); ?>
 </body>
@@ -43,7 +53,7 @@ body {
   position: relative;
 }
 
-.red-border {
+.rb {
   border: 1px solid red;
 }
 
@@ -60,7 +70,14 @@ body::before {
   background-position: center bottom;
   background-attachment: fixed;
 }
-
+.svg-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allow interactions with elements behind the SVG */
+}
 /* Header Styles */
 header {
   position: relative;
@@ -71,6 +88,7 @@ header {
   display: flex;
   flex-direction: column;
   color: #fff;
+  z-index: 1;
 }
 
 .header-section {
@@ -94,7 +112,7 @@ h2 {
   background-color: none;
   display: flex;
   flex-direction: row;
-  margin: 1%;
+  margin: 1% 5%;
 }
 
 h1 {
@@ -119,6 +137,8 @@ nav {
   flex-direction: column;
   justify-content: center;
   font-size: 1.5em;
+  margin-top:10%
+
 }
 
 nav a,
@@ -139,8 +159,9 @@ a.shop-link p {
 }
 
 a.shop-link img {
-  width: 20em; /* Adjusted for responsiveness */
-  max-width: 200px;
+  width: 100%; /* Take up 100% of the available width */
+  max-width: 50%; /* Set a maximum width for larger screens */
+  min-width: 20%; /* Set a minimum width to prevent excessive squeezing */
   display: block;
   margin: 0 auto;
 }
@@ -149,9 +170,9 @@ a.shop-link img {
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the buttons horizontally */
   height: 100%;
 }
 
@@ -159,15 +180,19 @@ li {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 1% 0; /* Adjust as needed */
+
 }
 
 .button {
   background-color: var(--button-bg);
-  margin: 1em 2em; /* Adjust as needed */
   padding: 0.5em 1em; /* Adjust as needed */
   border-radius: 30px;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   font-size: 2em; /* Adjust as needed */
+  width: 70%; /* Set a percentage width for the button */
+  max-width: 300px; /* Set a maximum width for larger screens */
+  text-align: center; /* Center the text within the button */
 }
 .button a {
     display: flex;
@@ -178,7 +203,7 @@ li {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .header-section {
     flex-direction: column;
     justify-content: center;
@@ -187,24 +212,37 @@ li {
 
   .heading {
     width: 100%;
+    
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 2em;
+    margin:0 auto 10% ; /* Center the shop-link horizontally */
+
   }
 
   h2 {
-    font-size: 4em;
+    font-size: 3em;
+    margin: 2% 1% 0 10%; /* Center the shop-link horizontally */
+
   }
-  nav a, a.shop-link{
+  nav{
+    margin-top: 0;
+    
+  }
+  nav a{
     margin: 0 40%
   }
-
+  a.shop-link{
+    margin: 0 auto; /* Center the shop-link horizontally */
+   }
   a.shop-link img {
     width: 100%;
   }
 
   .button {
+    width: 800%; /* Allow the button to take up the full width on smaller screens */
+    max-width: 70%; /* Prevent the button from becoming too wide on larger screens */
     font-size: 2rem;
   }
   .button a {
