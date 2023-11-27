@@ -18,6 +18,8 @@
     // I don't whant to display sku, categories, tags on single product page
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+    add_filter( 'show_admin_bar', '__return_false' );
+
     function display_menu_items_on_product_page() {
         // Get the current post object
         global $post;

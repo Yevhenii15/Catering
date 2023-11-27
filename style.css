@@ -8,3 +8,24 @@ Author: Jonina, Yevhenii, Kian
     background-color: black;
     color: whitesmoke;
 } */
+
+
+  @import url("https://use.typekit.net/lzg8igz.css");
+
+  /* :root {
+    --main-font-family: 'Your Main Font', sans-serif;
+    --heading-font-family: 'Your Heading Font', serif;
+    --base-font-size: 16px;
+  } */
+
+  :root{
+   
+        --gray-shade: #7a7a7b;
+        --light-gray: #f1f1f0;
+        --button-bg: rgba(213, 124, 41, 0.28);
+        --orange: #d57d29;
+        --dark-orange: #d86b27;
+        --black: #060606;
+        
+
+  }
