@@ -11,13 +11,9 @@ $welcome_additional_text = get_field('welcome_additional_text');
 
   <!-- SVG Background -->
   <div class="svg-background">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 684" preserveAspectRatio="xMidYMid meet">
-  <path fill="#f3f4f5" fill-opacity="0.5" d="M0,342L80,368.7C160,395,320,449,480,438C640,427,800,353,960,320.7C1120,289,1280,299,1360,304.7L1440,310L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-</svg>
-
-
-
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 684" preserveAspectRatio="xMidYMid meet">
+      <path fill="#f3f4f5" fill-opacity="0.5" d="M0,342L80,368.7C160,395,320,449,480,438C640,427,800,353,960,320.7C1120,289,1280,299,1360,304.7L1440,310L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+    </svg>
   </div>
   <section class="titles">
     <h2>Your Event,<br> - Our Passion!</h2>
@@ -54,12 +50,13 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none; /* Allow interactions with elements behind the SVG */
+  flex-grow: 1;
 }
 /* Header Styles */
 .titles {
   position: absolute;
-  top: 4em;
-  left: 3em;
+  top: 304.7L1440em;
+  padding-left:5%;
   line-height: 1.5;
   max-height: 100vh;
   width: 100vw;
@@ -80,14 +77,16 @@ body {
 
 /* Navigation Styles */
 nav {
+  position: absolute;
   display: flex;
-  width: 100%; 
-  justify-content: center;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
   text-align: center;
   font-size: 1.5em;
-  margin-top:10%;
-
+  justify-content: center;
+  bottom: 5%;
+  align-items: flex-end;
 }
 
 
@@ -137,20 +136,23 @@ h1::before {
 
 a.menu {
   padding-bottom: 2em;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  z-index: 3;
 }
 
 /* Button Styles */
 ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center; /* Center the buttons horizontally */
-  height: 100vh;
-  padding: 0!important;
-  justify-content: center;
-  gap: 1em;
-  margin-top: 12em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 0!important;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
 }
 
 li {
@@ -161,23 +163,23 @@ li {
 
 .btn {
   background-color: var(--button-bg);
-  padding: 0.5em 1em; /* Adjust as needed */
   border: 1px solid var(--gray-shade);
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  font-size: 2em; /* Adjust as needed */
-  width: 70%; /* Set a percentage width for the button */
-  max-width: 300px; /* Set a maximum width for larger screens */
-  text-align: center; /* Center the text within the button */
+  font-size: 2em;
+  width: 100%;
+  text-align: center;
 }
 .btn a {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Utilize the full width of the button */
-  white-space: nowrap; /* Prevent text from wrapping */
-
+  width: 100%;
+  white-space: nowrap;
+  height: 1.5em;
+  width: 32vw;
 }
+
 .menu p {
   background-color: var(--button-bg);
   padding: .1em  1.8em; /* Adjust as needed */
@@ -190,9 +192,7 @@ li {
 }
 
 
- 
-
-@media screen and (max-width: 850px) {
+ @media screen and (max-width: 1028px) {
   header {
     display: flex;
     flex-direction: column;
@@ -200,10 +200,8 @@ li {
     width: 100% ;
   }
 
-
   h1 {
     font-size: 2em;
-    margin:0 auto 10% ; /* Center the shop-link horizontally */
 
   }
 
@@ -229,16 +227,28 @@ li {
   nav a{
     margin: 0 40%
   }
- 
- 
-
+  ul {
+    margin-bottom: 10%;
+  }
+  a.menu{
+  position: static
+  }
+ .menu p{
+  padding: 0 50%;
+  margin: 0 0.2em;
+  }
+ a.menu img{
+  width: 100%;
+ } 
   .btn {
     font-size: 1.4em;
-    padding:.2em 0.5em;
   }
   .btn a {
     width: auto; /* Reset width for smaller screens */
+    padding:.2em 0.5em;
+
   }
-}
+ }
+
 
 </style>
