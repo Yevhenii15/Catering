@@ -156,6 +156,7 @@ a.shop-link {
 a.shop-link p {
   margin: 0;
   font-size: 2rem;
+  ;
 }
 
 a.shop-link img {
@@ -187,6 +188,7 @@ li {
 .button {
   background-color: var(--button-bg);
   padding: 0.5em 1em; /* Adjust as needed */
+  border: 1px solid var(--gray-shade);
   border-radius: 30px;
   backdrop-filter: blur(10px);
   font-size: 2em; /* Adjust as needed */
