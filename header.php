@@ -7,4 +7,21 @@
     <?php wp_head() ?>
 </head>
 <body>
-    <main> 
+    <header>
+        <nav>
+            <ul>
+                <a href="<?php echo get_site_url(); ?>/shop" class="menu ">
+                    <img class="top" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Top.svg" alt="">
+                    <p>Menu</p>
+                    <img class="bottom" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Bottom.svg" alt="">
+                </a>
+                <li class="btn">
+                    <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
+                </li>
+                <li class="btn">
+                    <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
