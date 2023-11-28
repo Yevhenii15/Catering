@@ -20,58 +20,47 @@
 
     add_filter( 'show_admin_bar', '__return_false' );
 
-    function display_menu_items_on_product_page() {
-        // Get the current post object
-        global $post;
     
-        // Check if it's a single product page
-        if (is_product()) {
-            // Query the custom post type
-            $menu_items = new WP_Query(array(
-                'post_type' => 'menu_item', // Replace with your custom post type
-                'posts_per_page' => -1,
-                'post_status' => 'publish',
-            ));
     
-            // Check if there are menu items
-            if ($menu_items->have_posts()) {
-                echo '<div class="menu-items">';
-                echo '<h3>This menu includes:</h3>';
+    // Hook to display custom post type content on single product page
+    add_action('woocommerce_after_single_product_summary', 'display_related_products');
 
-                // Loop through the menu items
-                while ($menu_items->have_posts()) {
-                    // Set up the post data
-                    $menu_items->the_post();
-    
-                    // Get custom fields
-                    $item_image = get_field('item_image'); // Replace with the actual field name
-                    $description = get_field('description'); // Replace with the actual field name
-    
-                    // Display title
-                    echo '<h4>' . get_the_title() . '</h4>';
+function display_related_products() {
+    // Get the current product ID
+    $product_id = get_the_ID();
 
-                    // Display image if available
-                    if ($item_image) {
-                        echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title()) . '">';
-                    }
-    
-                    // Display description if available
-                    if ($description) {
-                        echo '<p>' . esc_html($description) . '</p>';
-                    }
-    
-                }
-    
-                echo '</div>';
+    // Get the related products using the 'product' field
+    $related_products = get_field('product', $product_id);
+
+    if ($related_products) {
+        foreach ($related_products as $related_product) {
+            // Set up post data for the current related product
+            setup_postdata($related_product);
+
+            // Get custom fields for the related product
+            $item_image = get_field('item_image', $related_product);
+            $description = get_field('description', $related_product);
+
+            // Display title
+            echo '<h4>' . get_the_title($related_product) . '</h4>';
+
+            // Display image if available
+            if ($item_image) {
+                echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title($related_product)) . '">';
             }
-    
-            // Reset the post data
+
+            // Display description if available
+            if ($description) {
+                echo '<p>' . esc_html($description) . '</p>';
+            }
+
+            // Reset post data
             wp_reset_postdata();
         }
     }
-    
-    // Hook to display custom post type content on single product page
-    add_action('woocommerce_after_single_product_summary', 'display_menu_items_on_product_page');
+}
+
+
 
     // Remove upsell heading
     function remove_upsell_heading() {
@@ -92,10 +81,11 @@
     add_action('wp_head', 'remove_upsell_heading');
     
     
-    function enqueue_custom_scripts() {
-        wp_enqueue_script('custom-script', get_template_directory_uri() . '/custom-script.js', array('jquery'), null, true);
+    function my_custom_scripts() {
+        wp_register_script('custom-script', get_template_directory_uri() . '/custom-script.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('custom-script');
     }
-    add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+    add_action('wp_enqueue_scripts', 'my_custom_scripts');
 
 
 
