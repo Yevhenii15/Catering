@@ -41,7 +41,7 @@
         <header class="mobile-header">
             <div class="navs">
                 <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.png" alt=""></button>
                     <div class="dropdown-content">
                         <a href="<?php echo get_site_url(); ?>/shop" class="menu ">Menu</a>
                         <a href="<?php echo get_site_url(); ?>/about">Who we are</a>

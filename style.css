@@ -13,11 +13,11 @@ Author: Jonina, Yevhenii, Kian
   @import url("https://use.typekit.net/lzg8igz.css");
   @import url("https://use.typekit.net/gpa8pvq.css");
 
-  /* :root {
-    --main-font-family: 'Your Main Font', sans-serif;
-    --heading-font-family: 'Your Heading Font', serif;
+  :root {
+    --main-font: "itc-avant-garde-gothic-pro", sans-serif;
+    --heading-font: "garamond-atf-subhead", serif;
     --base-font-size: 16px;
-  } */
+  }
 
   /* 
   ITC Avant Garde Gothic Pro Book
@@ -61,7 +61,32 @@ Author: Jonina, Yevhenii, Kian
   }
   .desktop-header{
     display: flex;
+    justify-content: space-between;
+    align-items: center; 
   }
+  nav{
+    width: 40%;
+    margin-right: 10%;
+  }
+  /* this will correct the desktop header */
+  /*But the it will also overwrite homepage */
+
+  /* nav ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--light-gray);
+    gap: 1em;
+  }
+  nav ul a, nav ul li a{
+  font-family: var(--main-font);
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: 26px;
+  } */
+
   .mobile-header{
     display: none;
   }
@@ -82,7 +107,7 @@ Author: Jonina, Yevhenii, Kian
     margin: 0 0.5em;
   }
   footer a{
-    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    font-family: var(--heading-font);
     font-weight: 700;
     font-size: 1em;
     text-decoration: none;
@@ -101,71 +126,82 @@ Author: Jonina, Yevhenii, Kian
   }
   @media screen and (max-width: 900px) {
     /* Mobile header */
-    .desktop-header{
-      display: none;
-    }
-    .mobile-header{
+    .mobile-header {
       display: flex;
       width: 95%;
       justify-content: flex-end;
       margin-top: 1em;
-      }
-    .navs{
+    }
+    
+    a.logo img {
+        z-index: 1;
+    }
+    
+  .desktop-header {
+      display: none;
+  }
+ /* the dropdown isn't centered at all times, only on some mobile screens*/
+  .navs {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
       width: 60%;
-    }
-    a.logo img{
-      z-index: 1;
-    }
-    .dropbtn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
+  }
+
+  .dropbtn {
+      background-color: transparent;
       border: none;
       cursor: pointer;
-    }
-    
-    .dropdown {
+      padding: 0;
+  }
+
+  .dropbtn img {
+      width: 5em; /* Adjust the width of the icon */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  .dropdown {
       position: relative;
       display: inline-block;
-    }
-    
-    .dropdown-content {
+      margin-left: 10px; /* Add some margin to separate the icon from text */
+  }
+
+  .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      background-color: var(--light-gray);
+      left: -40vw; /*** since the dropdown isn't perfectly centered this will show the tiniest gap in the left side ***/
+      width: 100vw; /* Make the width 100% of the parent container */
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
-    }
-    
-    .dropdown-content a {
+  }
+
+  .dropdown-content a {
+      font-family: var(--heading-font);
       color: black;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
-    }
-    
-    .dropdown-content a:hover {background-color: #f1f1f1}
-    
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    
-    .dropdown:hover .dropbtn {
-      background-color: #3e8e41;
-    }
-    /* Mobile footer */
-    footer .some{
-      margin: 0.7em 0;
-    }
-    footer .terms{
-      width: 90%;
-    }
-    footer .terms a{
-      font-size: 0.8em;
-    }
   }
+
+  .dropdown-content a:hover {
+      background-color: #f1f1f1;
+  }
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+
+
+}
+    /* Mobile footer */
+  footer .some{
+    margin: 0.7em 0;
+  }
+  footer .terms{
+    width: 90%;
+  }
+  footer .terms a{
+    font-size: 0.8em;
+  }
+  
