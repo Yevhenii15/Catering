@@ -3,198 +3,183 @@ Theme Name: BBQ Catering
 Text Domain: bbq-catering
 Author: Jonina, Yevhenii, Kian 
 */
+@import url("https://use.typekit.net/lzg8igz.css");
+@import url("https://use.typekit.net/gpa8pvq.css");
 
-/* * {
-    background-color: black;
-    color: whitesmoke;
-} */
+:root {
+  --main-font: "itc-avant-garde-gothic-pro", sans-serif;
+  --heading-font: "garamond-atf-subhead", serif;
+  --base-font-size: 16px;
+}
 
+:root{
+      --gray-shade: #7a7a7b;
+      --light-gray: #f1f1f0;
+      --button-bg: rgba(209, 130, 56, 0.293);
+      --orange: #d57d29;
+      --dark-orange: #d86b27;
+      --black: #060606;
+}
 
-  @import url("https://use.typekit.net/lzg8igz.css");
-  @import url("https://use.typekit.net/gpa8pvq.css");
+body {
+  margin:0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  color: var(--light-gray);
+}
 
-  :root {
-    --main-font: "itc-avant-garde-gothic-pro", sans-serif;
-    --heading-font: "garamond-atf-subhead", serif;
-    --base-font-size: 16px;
-  }
-
-  /* 
-  ITC Avant Garde Gothic Pro Book
-  font-family: "itc-avant-garde-gothic-pro", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  ITC Avant Garde Gothic Pro Medium
-  font-family: "itc-avant-garde-gothic-pro", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  ITC Avant Garde Gothic Pro Bold
-  font-family: "itc-avant-garde-gothic-pro", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-   */
-
-  :root{
-        --gray-shade: #7a7a7b;
-        --light-gray: #f1f1f0;
-        --button-bg: rgba(209, 130, 56, 0.293);
-        --orange: #d57d29;
-        --dark-orange: #d86b27;
-        --black: #060606;
-  }
-  body {
-    margin:0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-attachment: fixed;
-    color: var(--light-gray);
-  }
-  /* Header */
-  a.logo img{
-    position: relative;
-    z-index: 1;
-    margin: 1%;
-  }
-  .desktop-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-  }
-  nav{
-    width: 40%;
-    margin-right: 10%;
-  }
-  /* this will correct the desktop header */
-  /*But the it will also overwrite homepage */
-
-  /* nav ul{
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--light-gray);
-    gap: 1em;
-  }
-  nav ul a, nav ul li a{
+/* Header */
+a.logo img{
+  position: relative;
+  z-index: 1;
+  margin: 1em;
+}
+.desktop-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+nav{
+  margin-right: 5%;
+}
+/* Design of navigation for desktop version */
+nav ul{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--light-gray);
+  gap: 1.5em;
+}
+nav ul a, nav ul li a{
   font-family: var(--main-font);
   color: var(--light-gray);
   text-decoration: none;
   font-size: 26px;
-  } */
-
-  .mobile-header{
-    display: none;
-  }
-  /* Footer */
-  footer {
-    position: relative;
-    bottom: 0;
-    display: flex;
-    align-items: center; 
-    width: 100%;
-    flex-direction: column;
-    margin-bottom: 1%;
-  }
-  footer .some{
-    margin: 1.5em 0;
-  }
-  .some img{
-    margin: 0 0.5em;
-  }
-  footer a{
-    font-family: var(--heading-font);
-    font-weight: 700;
-    font-size: 1em;
-    text-decoration: none;
-    color: var(--light-gray);
-    transition: 0.3s;
-
-  }
-  footer a:hover{
-    color: var(--orange);
-  }
-  footer .terms{
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 1%;
-  }
-  @media screen and (max-width: 900px) {
-    /* Mobile header */
-    .mobile-header {
-      display: flex;
-      width: 95%;
-      justify-content: flex-end;
-      margin-top: 1em;
-    }
-    
-    a.logo img {
-        z-index: 1;
-    }
-    
-  .desktop-header {
-      display: none;
-  }
- /* the dropdown isn't centered at all times, only on some mobile screens*/
-  .navs {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      width: 60%;
-  }
-
-  .dropbtn {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-  }
-
-  .dropbtn img {
-      width: 5em; /* Adjust the width of the icon */
-      height: auto; /* Maintain aspect ratio */
-  }
-
-  .dropdown {
-      position: relative;
-      display: inline-block;
-      margin-left: 10px; /* Add some margin to separate the icon from text */
-  }
-
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: var(--light-gray);
-      left: -40vw; /*** since the dropdown isn't perfectly centered this will show the tiniest gap in the left side ***/
-      width: 100vw; /* Make the width 100% of the parent container */
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-  }
-
-  .dropdown-content a {
-      font-family: var(--heading-font);
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-  }
-
-  .dropdown-content a:hover {
-      background-color: #f1f1f1;
-  }
-
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
-
+} 
+.mobile-header{
+  display: none;
+}
+/* Footer */
+footer {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 1%;
+}
+footer .some{
+  margin: 1.5em 0;
+}
+.some img{
+  margin: 0 0.5em;
+}
+footer a{
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 1em;
+  text-decoration: none;
+  color: var(--light-gray);
+  transition: 0.3s;
 
 }
-    /* Mobile footer */
+footer a:hover{
+  color: var(--orange);
+}
+footer .terms{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1%;
+}
+@media screen and (max-width: 900px) {
+  /* Mobile header */
+  .mobile-header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+.desktop-header {
+  display: none;
+}
+.navs {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 60%;
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dropbtn img {
+    width: 5em; /* Adjust the width of the icon */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--light-gray);
+    color: var(--light-gray);
+    left: -40vw; /*** since the dropdown isn't perfectly centered this will show the tiniest gap in the left side ***/
+    width: 92vw; /* Make the width 100% of the parent container */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/background-blur.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    padding: 1em;
+    animation: slideIn 0.5s ease-in-out; /* Add animation properties */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%); /* Start the animation above the viewport */
+    }
+    to {
+        transform: translateY(0%); /* End the animation at its normal position */
+    }
+}
+
+.dropdown-content a {
+    font-family: var(--heading-font);
+    color: #f1f1f0;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    width: 30%;
+    font-family: var(--main-font);
+    font-weight: 700;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    top: 0; /* Adjust the top position */
+    height: 8.5em;
+}
+
+  /* Mobile footer */
   footer .some{
     margin: 0.7em 0;
   }
@@ -204,4 +189,5 @@ Author: Jonina, Yevhenii, Kian
   footer .terms a{
     font-size: 0.8em;
   }
-  
+}
+

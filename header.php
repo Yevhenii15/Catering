@@ -39,20 +39,21 @@
     if (!is_front_page()) { // Check if the current page is not the homepage
     ?>
         <header class="mobile-header">
-            <div class="navs">
-                <div class="dropdown">
-                    <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.png" alt=""></button>
-                    <div class="dropdown-content">
-                        <a href="<?php echo get_site_url(); ?>/shop" class="menu ">Menu</a>
-                        <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
-                        <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
-                    </div>
+        <div class="navs">
+            <div class="dropdown">
+                <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.png" alt=""></button>
+                <div class="dropdown-content">
+                    <a href="<?php echo get_site_url(); ?>/shop" class="menu">Menu</a>
+                    <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
+                    <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
                 </div>
-                <a class="logo" href="<?php echo get_site_url(); ?>">
-                    <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Logo.svg" alt="">
-                </a>
             </div>
-        </header>
+            <a class="logo" href="<?php echo get_site_url(); ?>">
+                <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Logo.svg" alt="">
+            </a>
+        </div>
+    </header>
+
     <?php
     }
     ?>
