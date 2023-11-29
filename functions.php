@@ -5,6 +5,40 @@
     }
     add_action( 'wp_enqueue_scripts', 'custom_styles' );
 
+    function enqueue_custom_styles() {
+        // Check if it's the specific page where you want to apply the styles
+        if (is_page('homepage')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/homepage.css');
+        }
+        if (is_page('contact-us')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/contact-us.css');
+        }
+        if (is_page('about-us')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/about-us.css');
+        }
+        if (is_page('shop')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/shop.css');
+        }
+        if (is_page('cart')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/cart.css');
+        }
+        if (is_page('checkout')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/checkout.css');
+        }
+        if (is_page('terms-of-service')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/terms-of-service.css');
+        }
+        if (is_page('privacy-policy')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/privacy-policy.css');
+        }
+        if (is_page('copyrigths')) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/copyrigths.css');
+        }
+    }
+    add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+  
+   
+    
     function remove_gutenberg() {
         remove_post_type_support( 'page', 'editor' );
         remove_post_type_support( 'post', 'editor' );
@@ -59,9 +93,6 @@ function display_related_products() {
         }
     }
 }
-
-
-
     // Remove upsell heading
     function remove_upsell_heading() {
         ?>
@@ -76,7 +107,6 @@ function display_related_products() {
         </style>
         <?php
     }
-    
     // Hook to remove upsell heading
     add_action('wp_head', 'remove_upsell_heading');
     
@@ -87,9 +117,6 @@ function display_related_products() {
     }
     add_action('wp_enqueue_scripts', 'my_custom_scripts');
 
-
-
-    
     add_action('template_redirect', 'redirect_to_checkout_if_cart_not_empty_single_product');
 
     function redirect_to_checkout_if_cart_not_empty_single_product() {
