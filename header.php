@@ -38,7 +38,7 @@
     <?php
     if (!is_front_page()) { // Check if the current page is not the homepage
     ?>
-        <header class="mobile-header">
+    <header class="mobile-header">
         <div class="navs">
             <div class="dropdown">
                 <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.png" alt=""></button>

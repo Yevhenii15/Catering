@@ -123,6 +123,8 @@ footer .terms{
     border: none;
     cursor: pointer;
     padding: 0;
+    position: relative;
+    z-index: 10;
 }
 
 .dropbtn img {
@@ -141,7 +143,7 @@ footer .terms{
     background-color: var(--light-gray);
     color: var(--light-gray);
     left: -40vw; /*** since the dropdown isn't perfectly centered this will show the tiniest gap in the left side ***/
-    width: 92vw; /* Make the width 100% of the parent container */
+    width: 92vw; 
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/background-blur.png');
@@ -149,7 +151,10 @@ footer .terms{
     background-position: center bottom;
     background-attachment: fixed;
     padding: 1em;
-    animation: slideIn 0.5s ease-in-out; /* Add animation properties */
+    animation: slideIn 0.3s ease-in-out; /* Add animation properties */
+}
+.dropdown-content.close{
+  animation: slideOut 0.3s ease-in-out; /* Add animation properties */
 }
 
 @keyframes slideIn {
@@ -160,6 +165,15 @@ footer .terms{
         transform: translateY(0%); /* End the animation at its normal position */
     }
 }
+@keyframes slideOut {
+  from {
+      transform: translateY(0%); /* Start the animation at its normal position */
+  }
+  to {
+      transform: translateY(-100%); /* End the animation above the viewport */
+  }
+}
+
 
 .dropdown-content a {
     font-family: var(--heading-font);
@@ -174,9 +188,13 @@ footer .terms{
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
-    top: 0; /* Adjust the top position */
-    height: 8.5em;
+  display: flex;
+  top: 0;
+  height: 11em;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: -1em;
 }
 
   /* Mobile footer */
