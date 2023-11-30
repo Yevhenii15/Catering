@@ -5,6 +5,7 @@ body {
   }
   .desktop-header{
     display: block!important;
+    position: static!important;
   }
   .svg-background {
     position: fixed;
