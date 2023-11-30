@@ -1,4 +1,8 @@
 /* Background Styles */
+body {
+  background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
+
+  }
   .desktop-header{
     display: block!important;
   }
