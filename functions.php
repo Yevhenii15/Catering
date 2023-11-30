@@ -57,12 +57,16 @@
     add_filter( 'show_admin_bar', '__return_false' );
 
     // Shop
-    function add_top_image_to_woocommerce_shop() {
+    // Adding top image and title to woocommerce shop
+    function add_top_image_and_title_to_woocommerce_shop() {
         echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
+        echo '<p class="title"><span class="top-text-one">Savor the Flavor,</span><span class="top-text-two">Explore Our Menus</span></p>';
     }
-    
-    add_action('woocommerce_before_shop_loop', 'add_top_image_to_woocommerce_shop');
-    
+    add_action('woocommerce_before_shop_loop', 'add_top_image_and_title_to_woocommerce_shop');
+
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
 
 
