@@ -25,21 +25,21 @@ $contact_us_text = get_field('contact_us_text');
 ?>
     <img class="top-bg-nav"src="<?php echo esc_url($about_us_top_img['url']); ?>" alt="about-us-top-img" >
 
+    <div class="about-us-top-text flex-col">
+        <p><span class="top-text-one"><?php echo esc_html($about_us_top_text); ?></span><br><span class="top-text-two"><?php echo esc_html($about_us_top_text_2); ?></span></p>
+    </div>
 <div class="about-us flex-col" >
 
-        <div class="about-us-top-text flex-col">
-            <p><span class="top-text-one"><?php echo esc_html($about_us_top_text); ?></span><br><span class="top-text-two"><?php echo esc_html($about_us_top_text_2); ?></span></p>
-        </div>
 
     <section class="history">
-        <div class="history-text flex-col">
+        <div class="history-text flex-col text-margin">
             <h3><?php echo esc_html($history_title); ?></h3>
             <p><?php echo esc_html($text_about_history); ?></p>
         </div>
     </section>
 
     <section class="competition flex-row">
-        <div class="competition-text flex-col">
+        <div class="competition-text flex-col text-margin">
             <h3><?php echo esc_html($text_about_competition_title); ?></h3>
             <p><?php echo esc_html($text_about_competition); ?></p>
         </div>
@@ -49,14 +49,14 @@ $contact_us_text = get_field('contact_us_text');
     </section>
 
     <section class="family flex-row">
-        <div class="family-text flex-col">
+        <div class="family-text flex-col text-margin">
             <h3><?php echo esc_html($family_title); ?></h3>
             <p><?php echo esc_html($family_text); ?></p>
         </div>
     </section>
 
     <section class="join-us flex-row">
-        <div class="join-us-text flex-col">
+        <div class="join-us-text flex-col text-margin">
             <h3><?php echo esc_html($join_us_title); ?></h3>
             <p><?php echo esc_html($join_us_text); ?></p>
         </div>
@@ -66,7 +66,7 @@ $contact_us_text = get_field('contact_us_text');
     </section>
 
     <section class="contact-us">
-        <div class="contact-us-text flex-col">
+        <div class="contact-us-text flex-col text-margin">
             <h3><?php echo esc_html($contact_us_title); ?></h3>
             <p><?php echo esc_html($contact_us_text); ?></p>
         </div>

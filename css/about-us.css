@@ -20,6 +20,9 @@
 .top-bg-nav{
     width: 100%;
 }
+.text-margin{
+    margin: 0 5%;
+}
 p{
     font-family: var(--heading-font);
     font-size: 1.2em;
@@ -38,6 +41,10 @@ h3{
     font-family: var(--heading-font);
 
 }
+.top-bg-nav{
+    object-position: 50% 25%;
+
+}
 @media screen and (max-width:900px){
     .flex-row{
         flex-direction: column;
@@ -45,7 +52,7 @@ h3{
     .about-us{
         position: relative;
         top: 4em;
-        z-index: 5;
+        z-index: 3;
     }
     .about-us-top-text{
         display: flex;
