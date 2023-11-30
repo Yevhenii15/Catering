@@ -41,11 +41,14 @@
     <header class="mobile-header">
         <div class="navs">
             <div class="dropdown">
-                <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.png" alt=""></button>
+                <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.svg" alt=""></button>
                 <div class="dropdown-content">
-                    <a href="<?php echo get_site_url(); ?>/shop" class="menu">Menu</a>
-                    <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
-                    <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
+                    <div class="style">
+                        <a href="<?php echo get_site_url(); ?>/shop" class="menu">Menu</a>
+                        <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
+                        <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
+                    </div>
+                    
                 </div>
             </div>
             <a class="logo" href="<?php echo get_site_url(); ?>">
@@ -53,7 +56,6 @@
             </a>
         </div>
     </header>
-
     <?php
     }
     ?>

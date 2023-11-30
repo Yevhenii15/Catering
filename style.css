@@ -26,7 +26,6 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png');
   background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/background-blur.png');
   background-size: cover;
   background-position: center bottom;
@@ -103,11 +102,16 @@ footer .terms{
 }
 @media screen and (max-width: 900px) {
   /* Mobile header */
+  a.logo img{
+    width: 4em;
+    margin: 0;
+  }
   .mobile-header {
     display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    margin-top: 1em;
+    width: 92vw;
+    z-index: 5;
+    padding: 3% 5%;
+    position: fixed;
 }
 .desktop-header {
   display: none;
@@ -116,7 +120,7 @@ footer .terms{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 60%;
+    width: 100%;
 }
 
 .dropbtn {
@@ -135,47 +139,40 @@ footer .terms{
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
 }
+
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--light-gray);
-    color: var(--light-gray);
-    left: -40vw; /*** since the dropdown isn't perfectly centered this will show the tiniest gap in the left side ***/
-    width: 92vw; 
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/background-blur.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-attachment: fixed;
-    padding: 1em;
-    animation: slideIn 0.3s ease-in-out; /* Add animation properties */
-}
-.dropdown-content.close{
-  animation: slideOut 0.3s ease-in-out; /* Add animation properties */
+  display: none;
+  position: fixed;
+  background-color: var(--light-gray);
+  color: var(--light-gray);
+  width: 92vw;
+  height: 100vh!important;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/background-blur.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  padding: 1em;
+  animation: slideIn 0.3s ease-in-out; /* Apply the slide-in animation */
+
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(-100%); /* Start the animation above the viewport */
-    }
-    to {
-        transform: translateY(0%); /* End the animation at its normal position */
-    }
+.style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+  gap: .5em;
 }
-@keyframes slideOut {
-  from {
-      transform: translateY(0%); /* Start the animation at its normal position */
-  }
-  to {
-      transform: translateY(-100%); /* End the animation above the viewport */
-  }
-}
-
-
 .dropdown-content a {
     font-family: var(--heading-font);
     color: #f1f1f0;
@@ -183,21 +180,17 @@ footer .terms{
     text-decoration: none;
     display: block;
     position: relative;
-    width: 30%;
     font-family: var(--main-font);
     font-weight: 700;
 }
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-  top: 0;
-  height: 11em;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-top: -1em;
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
-
   /* Mobile footer */
   footer .some{
     margin: 0.7em 0;
@@ -207,6 +200,11 @@ footer .terms{
   }
   footer .terms a{
     font-size: 0.8em;
+  }
+  /* Style for top background img */
+  .top-bg-nav{
+    position: fixed;
+    z-index: 4;
   }
 }
 

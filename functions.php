@@ -1,10 +1,12 @@
 <?php
-  // Add stylesheets
+
+    // Add stylesheets
     function custom_styles() {
         wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/style.css' );
     }
     add_action( 'wp_enqueue_scripts', 'custom_styles' );
 
+    // Add custom stylesheets
     function enqueue_custom_styles() {
         // Check if it's the specific page where you want to apply the styles
         if (is_page('homepage')) {
@@ -36,63 +38,99 @@
         }
     }
     add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
-  
-   
-    
+
+    // Add scripts
+    function my_custom_scripts() {
+        wp_register_script('custom-script', get_template_directory_uri() . '/custom-script.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('custom-script');
+    }
+    add_action('wp_enqueue_scripts', 'my_custom_scripts');
+
+    // Add remove gutenberg
     function remove_gutenberg() {
         remove_post_type_support( 'page', 'editor' );
         remove_post_type_support( 'post', 'editor' );
     }
     add_action( 'init', 'remove_gutenberg' );
 
+    // Remove wordpress bar
+    add_filter( 'show_admin_bar', '__return_false' );
+
+    // Shop
+    function add_top_image_to_woocommerce_shop() {
+        echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
+    }
+    
+    add_action('woocommerce_before_shop_loop', 'add_top_image_to_woocommerce_shop');
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Single product page
+
     // title of single product page is not displaying write code to display title of single product page
     add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 9);
-    // I don't whant to display word sale on single product page
+    // I don't want to display word sale on single product page
     remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
     // I don't whant to display sku, categories, tags on single product page
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
-    add_filter( 'show_admin_bar', '__return_false' );
-
-    
-    
-    // Hook to display custom post type content on single product page
-    add_action('woocommerce_after_single_product_summary', 'display_related_products');
-
-function display_related_products() {
+   
+    // Display custom post type content on single product page (Default ones)
+    function display_related_products() {
     // Get the current product ID
-    $product_id = get_the_ID();
+        $product_id = get_the_ID();
 
-    // Get the related products using the 'product' field
-    $related_products = get_field('product', $product_id);
+        // Get the related products using the 'product' field
+        $related_products = get_field('product', $product_id);
 
-    if ($related_products) {
-        foreach ($related_products as $related_product) {
-            // Set up post data for the current related product
-            setup_postdata($related_product);
+        if ($related_products) {
+            foreach ($related_products as $related_product) {
+                // Set up post data for the current related product
+                setup_postdata($related_product);
 
-            // Get custom fields for the related product
-            $item_image = get_field('item_image', $related_product);
-            $description = get_field('description', $related_product);
+                // Get custom fields for the related product
+                $item_image = get_field('item_image', $related_product);
+                $description = get_field('description', $related_product);
 
-            // Display title
-            echo '<h4>' . get_the_title($related_product) . '</h4>';
+                // Display title
+                echo '<h4>' . get_the_title($related_product) . '</h4>';
 
-            // Display image if available
-            if ($item_image) {
-                echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title($related_product)) . '">';
+                // Display image if available
+                if ($item_image) {
+                    echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title($related_product)) . '">';
+                }
+
+                // Display description if available
+                if ($description) {
+                    echo '<p>' . esc_html($description) . '</p>';
+                }
+
+                // Reset post data
+                wp_reset_postdata();
             }
-
-            // Display description if available
-            if ($description) {
-                echo '<p>' . esc_html($description) . '</p>';
-            }
-
-            // Reset post data
-            wp_reset_postdata();
         }
     }
-}
+    add_action('woocommerce_after_single_product_summary', 'display_related_products');
+
     // Remove upsell heading
     function remove_upsell_heading() {
         ?>
@@ -107,95 +145,28 @@ function display_related_products() {
         </style>
         <?php
     }
-    // Hook to remove upsell heading
     add_action('wp_head', 'remove_upsell_heading');
-    
-    
-    function my_custom_scripts() {
-        wp_register_script('custom-script', get_template_directory_uri() . '/custom-script.js', array('jquery'), '1.0.0', true);
-        wp_enqueue_script('custom-script');
-    }
-    add_action('wp_enqueue_scripts', 'my_custom_scripts');
 
+    // Redirect to checkout if added to cart from single product page
+    function redirect_to_checkout_if_cart_not_empty_single_product() {
+        // Check if on a single product page
+        if (is_product() && WC()->cart->get_cart_contents_count() > 0) {
+            wp_redirect(wc_get_checkout_url());
+            exit;
+        }
+    }
     add_action('template_redirect', 'redirect_to_checkout_if_cart_not_empty_single_product');
 
-    function redirect_to_checkout_if_cart_not_empty_single_product() {
-    // Check if on a single product page
-    if (is_product() && WC()->cart->get_cart_contents_count() > 0) {
-        wp_redirect(wc_get_checkout_url());
-        exit;
-    }
-    }
-
-
-    function theme_enqueue_scripts() {
-        wp_enqueue_script('jquery');
-    }
-    add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
-
-    function add_custom_scripts() {
-        ?>
- <script>
-        jQuery(document).ready(function ($) {
-            var dropdownContent = $('.dropdown-content');
-
-            // Set the initial state of the dropdown
-            dropdownContent.addClass('close');
-
-            // Click event for dropbtn
-            $('.dropbtn').on('click', function (e) {
-                e.preventDefault(); // Prevent the default behavior of the click event
-
-                if (dropdownContent.hasClass('close')) {
-                    // If the dropdown is closed, open it
-                    dropdownContent.removeClass('close');
-                    // Add styles for opening the dropdown
-                    dropdownContent.css({
-                        'display': 'flex',
-                        'top': 0,
-                        'height': '11em',
-                        'flex-direction': 'column',
-                        'justify-content': 'flex-end',
-                        'align-items': 'flex-start',
-                        'margin-top': '-1em'
-                    });
-                } else {
-                    // If the dropdown is open, close it
-                    dropdownContent.addClass('close');
-                    // Add styles for closing the dropdown
-                    dropdownContent.css({
-                        'display': 'none', // or any other closing styles
-                    });
-                }
-            });
-
-            // Click event for the document to close the dropdown when clicking outside
-            $(document).on('click', function (e) {
-                if (!$(e.target).closest('.dropdown').length) {
-                    // If the click is outside the dropdown, close it
-                    dropdownContent.addClass('close');
-                    // Add styles for closing the dropdown
-                    dropdownContent.css({
-                        'display': 'none', // or any other closing styles
-                    });
-                }
-            });
-        });
-    </script>
-
-        <?php
-    }
-    add_action('wp_footer', 'add_custom_scripts');
-
-    
-
-
-    
 
 
 
-  
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
