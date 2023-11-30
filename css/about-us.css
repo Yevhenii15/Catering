@@ -1,37 +1,58 @@
 
-.about-us{
-    position: relative;
-    top: 10em;
-}
 .flex-col {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .flex-row{
     display: flex;
     flex-direction: row;
 }
-
-#img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 .top-bg-nav{
     width: 100%;
+    box-shadow: 0 0 2em 0.3em #ffd0b45f;
+
+}
+
+.top-text-one{
+    font-weight: 800;
+    margin-left: -1.5em;
+    font-size: 1.5em;
+}
+.top-text-two{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5em;
+    margin-right: -1.5em;
+
+}
+.about-us{
+    position: relative;
+    top: 10em;
+    z-index: 3;
+}
+#img{
+    width: 50vw;
+    height: 40vh;
+    object-fit: cover;
 }
 .text-margin{
     margin: 0 5%;
 }
-p{
-    font-family: var(--heading-font);
-    font-size: 1.2em;
-    color: var(--light-gray);
-}
-h3{
+
+.text-style p{
     font-family: var(--heading-font);
     font-size: 1.5em;
     color: var(--light-gray);
+    margin-top: -2%;
+
+}
+h3{
+    font-family: var(--heading-font);
+    font-size: 2em;
+    color: var(--light-gray);
+    font-weight: 400;
+
 }
 .top-text-one{
     font-family: var(--heading-font);
@@ -45,19 +66,109 @@ h3{
     object-position: 50% 25%;
 
 }
+.history-text h3, .family-text h3, .contact-us-text h3{
+ text-align: center;
+  
+}
+.history-text, .family-text, .contact-us-text{
+    margin: 0 25%;     
+    
+   }
+.about-us p{
+    line-height: 1.5em;
+}
+section{
+    margin-bottom: 1em;
+}
 @media screen and (max-width:900px){
     .flex-row{
         flex-direction: column;
     }
-    .about-us{
-        position: relative;
-        top: 4em;
-        z-index: 3;
+  
+    .title{
+    position: fixed;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    top: 2.5em;
     }
-    .about-us-top-text{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    #img{
+        width: 100%;
+        height: 10em;
+
+    }
+    p{
+        font-size: 1.2em;
+    }
+    .history-text, .family-text, .contact-us-text{
+        margin: 0 5%;
+    }
+    .text-margin{
+        margin: 0 10%;
+    }
+    .text-style p{
+        font-size: 0.8em;
+        margin-top: -2%;
+        letter-spacing: 0.1em;
+        line-height: 2em;
+    }
+ 
+    .history-text h3, .family-text h3, .contact-us-text h3, h3{
+        margin-left: -3%;
+        font-size: 1em;
+        font-weight: 400;
+        text-align: start; 
+
+    }
+    .top-bg-nav{
+        object-position: 50% 25%;
+    
+    }
+
+    .top-text-one{
+        font-size: 2em;
+    }
+    .top-text-two{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .top-bg-nav{
+        object-position: 50% 25%;
+    
+    }
+    .top-text-one{
+        font-size: 1.5em;
+    }
+    .top-text-two{
+        font-size: 1.5em;
+    }
+    .text-margin{
+        margin: 0 10%;
+    }
+    .text-style p{
+        font-size: 0.8em;
+        margin-top: -2%;
+        letter-spacing: 0.1em;
+        line-height: 1.5em;
+    }
+    .history-text h3, .family-text h3, .contact-us-text h3{
+        margin-left: -3%;
+        font-size: 1em;
+        font-weight: 400;
+        text-align: start; 
+
+    }
+    .top-bg-nav{
+        object-position: 50% 25%;
+    
+    }
+
+    .title{
+        top: 3em;
     }
 }
 
