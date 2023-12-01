@@ -9,21 +9,83 @@ a:-webkit-any-link {
     cursor: none!important;
 }
 .woocommerce div.product div.images img{
-    height: 20em;
+    height: 15em;
     object-fit: cover;
     object-position: 50% 50%;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    z-index: -1;
 }
 .wpgs-nav .slick-slide {
     display: none!important;
 }
 .wpgs-nav .slick-prev{
-    display: none!important;
     background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/arrow-left.svg');
-
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0.7rem;
+    margin: 0!important;
+    top: -10rem !important;
 }
+
 .wpgs-nav .slick-next{
-    display: none!important;
+    background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    position: absolute;
+    right: 1rem;
+    top: -10rem !important;
 }
 .wpgs-for .slick-arrow::before, .wpgs-nav .slick-prev::before, .wpgs-nav .slick-next::before{
     color: #00000000!important;
 }
+.item-bg{
+    position: absolute;
+    top: 13em;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    height: auto!important;
+    width: 100%;
+    object-fit: cover;
+    height: 13em!important;
+    object-position: 50% 0;
+    backdrop-filter: blur(5px);
+}
+.woocommerce div.product .product_title{
+    position: relative;
+    z-index: 2;
+    top: -0.7em;
+    left: 0.7em;
+    width: 90%;
+    color: var(--light-gray);
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+   }
+   .woocommerce div.product p.price, .woocommerce div.product span.price{
+    position: absolute;
+    z-index: 2;
+    top: 8em;
+    right: 6%;
+    color: var(--light-gray);
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+   }
+   .woocommerce-product-details__short-description p{
+    color: var(--light-gray);
+    font-weight: 300;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    padding: 0  5em 0 2em;
+    margin: 0;
+    position: relative;
+    top: -1.5em;
+   }
+   .icon-price{
+    width: 9em;
+    position: absolute;
+    right: 3%;
+    top: 15.5em;
+   }

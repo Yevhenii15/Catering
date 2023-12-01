@@ -93,42 +93,7 @@
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
    
-    // Display custom post type content on single product page (Default ones)
-    function display_related_products() {
-    // Get the current product ID
-        $product_id = get_the_ID();
-
-        // Get the related products using the 'product' field
-        $related_products = get_field('product', $product_id);
-
-        if ($related_products) {
-            foreach ($related_products as $related_product) {
-                // Set up post data for the current related product
-                setup_postdata($related_product);
-
-                // Get custom fields for the related product
-                $item_image = get_field('item_image', $related_product);
-                $description = get_field('description', $related_product);
-
-                // Display title
-                echo '<h4>' . get_the_title($related_product) . '</h4>';
-
-                // Display image if available
-                if ($item_image) {
-                    echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title($related_product)) . '">';
-                }
-
-                // Display description if available
-                if ($description) {
-                    echo '<p>' . esc_html($description) . '</p>';
-                }
-
-                // Reset post data
-                wp_reset_postdata();
-            }
-        }
-    }
-    add_action('woocommerce_after_single_product_summary', 'display_related_products');
+    
 
     // Remove upsell heading
     function remove_upsell_heading() {
@@ -157,15 +122,86 @@
     add_action('template_redirect', 'redirect_to_checkout_if_cart_not_empty_single_product');
     
         
+    
+     // Adding background image to item woocommerce shop
+     function add_bg_item_image_to_woocommerce_product() {
+        echo '<img class="item-bg" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/product-page-item-bg.svg" alt="Background for item">';    }
+    add_action('woocommerce_single_product_summary', 'add_bg_item_image_to_woocommerce_product');
+
+     // Price img
+     function add_price_image_to_woocommerce_product() {
+        echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/product-price.svg" alt="Price logo">';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_price_image_to_woocommerce_product');
 
 
 
 
-
-
-
-
-
-
-
-
+    function display_related_products() {
+        // Get the current product ID
+        $product_id = get_the_ID();
+    
+        // Get the related products using the 'product' field
+        $related_products = get_field('product', $product_id);
+    
+        if ($related_products) {
+            // Organize related products by category
+            $main_course_products = array();
+            $sides_products = array();
+    
+            foreach ($related_products as $related_product) {
+                // Get the categories for the related product
+                $categories = get_the_category($related_product);
+    
+                if ($categories) {
+                    foreach ($categories as $category) {
+                        $category_name = $category->slug;
+    
+                        // Add the related product to the respective category array
+                        if ($category_name === 'main-course') {
+                            $main_course_products[] = $related_product;
+                        } elseif ($category_name === 'sides') {
+                            $sides_products[] = $related_product;
+                        }
+                    }
+                }
+            }
+    
+            // Display 'main-course' products
+            echo '<h3>Main Course</h3>';
+            display_products_by_category($main_course_products);
+    
+            // Display 'sides' products
+            echo '<h3>Sides</h3>';
+            display_products_by_category($sides_products);
+        }
+    }
+    
+    function display_products_by_category($products) {
+        foreach ($products as $related_product) {
+            // Set up post data for the current related product
+            setup_postdata($related_product);
+    
+            // Get custom fields for the related product
+            $item_image = get_field('item_image', $related_product);
+            $description = get_field('description', $related_product);
+    
+            // Display title
+            echo '<h4>' . get_the_title($related_product) . '</h4>';
+    
+            // Display image if available
+            if ($item_image) {
+                echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title($related_product)) . '">';
+            }
+    
+            // Display description if available
+            if ($description) {
+                echo '<p>' . esc_html($description) . '</p>';
+            }
+    
+            // Reset post data
+            wp_reset_postdata();
+        }
+    }
+    
+    add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
+    
