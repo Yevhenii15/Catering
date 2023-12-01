@@ -26,7 +26,7 @@ a:-webkit-any-link {
     position: absolute;
     left: 0.7rem;
     margin: 0!important;
-    top: -10rem !important;
+    top: -7rem !important;
 }
 
 .wpgs-nav .slick-next{
@@ -35,7 +35,7 @@ a:-webkit-any-link {
     background-size: 100% 100%;    
     position: absolute;
     right: 1rem;
-    top: -10rem !important;
+    top: -7rem !important;
 }
 .wpgs-for .slick-arrow::before, .wpgs-nav .slick-prev::before, .wpgs-nav .slick-next::before{
     color: #00000000!important;
@@ -89,3 +89,138 @@ a:-webkit-any-link {
     right: 3%;
     top: 15.5em;
    }
+   .item-text{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+   }
+   .category{
+    margin: 0 10% ;
+    font-weight: 200;
+    font-size: 1.5em;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+   }
+   .including-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+   }
+   .including-item img{
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    object-position: 50% 50%;
+   }
+   .including-item:nth-child(odd) img {
+    order: 2; /* Reverse the order for odd elements */
+}
+    .including-item .title-description{
+        width: 65%;
+    }
+    .including-item .title-description h4{
+        margin: 0;
+        font-size: 1.1em;
+    }
+    .including-item .title-description p{
+        margin: .5em 0;
+    }
+    .mbfw-date-picker-section label{
+        display: none!important;
+    }
+    .booking-section{
+        background-color: #69402067;
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 5% 10%;
+    }
+    .booking{
+        text-align: center;
+        font-size: 1.5em;
+        margin: .5em;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+    }
+    .time{
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+    }
+    .mbfw-additionl-detail-listing-section__wrapper{
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    }
+    .mbfw-date-picker-section__wrapper{
+        width: 100%;
+    }
+    .mbfw-additionl-detail-listing-section{
+        width: 100%!important;
+    }
+    .mbfw-additionl-detail-listing-section{
+        max-width: 100%!important;
+    }
+    .mbfw-additionl-detail-listing-section input[type=number]{
+        width: 100%!important;
+        background-color: var(--button-bg);
+        border: 1px solid var(--gray-shade);
+        border-radius: 25px;
+        font-size: .8em;
+        backdrop-filter: blur(10px);
+        width: calc(100% - .5em);
+        padding: .5em .1em;
+        font-family: var( --main-font);
+        color: var(--light-gray);
+    }
+    .wps_single_cal_hourly{
+        background-color: var(--button-bg);
+        border: 1px solid var(--gray-shade);
+        border-radius: 25px;
+        font-size: .8em;
+        backdrop-filter: blur(10px);
+        width: calc(100% - .5em);
+        padding: 1em .5em;
+        font-family: var( --main-font);
+        color: var(--light-gray);
+    }
+    ::placeholder {
+        color: #f1f1f0;
+        font-size: 1em;
+    }
+    .mwb_mbfw_included_service_title{
+        margin: 1em 0;
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    }
+    .entry-summary .mwb-mbfw-cart-page-data input{
+        margin: .5em 0;
+    }
+    .mwb_mbfw_detail-listing-wrap .mbfw-additionl-detail-listing-section{
+        width: auto!important;
+        max-width: 15%!important;
+    }
+    .mwb_mbfw_detail-listing-wrap .mbfw-additionl-detail-listing-section:nth-child(odd){
+        width: auto!important;
+        max-width: 70%!important;
+    }
+    .mwb-bfwp-booking-quantity__public-show{
+        display: none!important;
+    }
+    :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled[disabled]{
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    font-family: var(--heading-font);
+    padding: .3em 0;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+    }
+    

@@ -132,6 +132,10 @@
      function add_price_image_to_woocommerce_product() {
         echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/product-price.svg" alt="Price logo">';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_price_image_to_woocommerce_product');
+    // Including item text
+    function add_item_text_to_woocommerce_product() {
+        echo '<h2 class="item-text">Including</h2>';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_item_text_to_woocommerce_product');
 
 
 
@@ -167,11 +171,11 @@
             }
     
             // Display 'main-course' products
-            echo '<h3>Main Course</h3>';
+            echo '<h3 class="category">Main Course:</h3>';
             display_products_by_category($main_course_products);
     
             // Display 'sides' products
-            echo '<h3>Sides</h3>';
+            echo '<h3 class="category">Sides:</h3>';
             display_products_by_category($sides_products);
         }
     }
@@ -185,23 +189,68 @@
             $item_image = get_field('item_image', $related_product);
             $description = get_field('description', $related_product);
     
-            // Display title
-            echo '<h4>' . get_the_title($related_product) . '</h4>';
-    
-            // Display image if available
-            if ($item_image) {
+            echo '<div class="including-item">';
+             // Display image if available
+
+             if ($item_image) {
                 echo '<img src="' . esc_url($item_image['url']) . '" alt="' . esc_attr(get_the_title($related_product)) . '">';
             }
-    
+            echo '<div class="title-description">';
+            // Display title
+            echo '<h4>' . get_the_title($related_product) . '</h4>';
             // Display description if available
             if ($description) {
                 echo '<p>' . esc_html($description) . '</p>';
             }
-    
+            echo '</div>';
+            echo '</div>';
             // Reset post data
             wp_reset_postdata();
         }
     }
     
     add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
+    function add_booking_section_to_woocommerce_product() {
+        echo '<div class="booking-section">';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_booking_section_to_woocommerce_product');
+    
+    function add_booking_text_to_woocommerce_product() {
+        echo '<h5 class="booking">Book</h5>';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_booking_text_to_woocommerce_product');
+
+    function add_time_text_to_woocommerce_product() {
+        echo '<h6 class="time">When?</h6>';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_time_text_to_woocommerce_product');
+
+    function change_div_text() {
+        ?>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                // Replace 'your-new-text' with the desired text
+                var newText = 'Add More To Your Order';
+                
+                // Find the div by its class name
+                var divElement = document.querySelector('.mwb_mbfw_included_service_title');
+                
+                // Check if the div element is found
+                if (divElement) {
+                    // Update the text content of the div
+                    divElement.textContent = newText;
+                }
+            });
+        </script>
+        <?php
+    }
+    
+    add_action('wp_footer', 'change_div_text');
+    
+    
+
+    function add_booking_section_close_to_woocommerce_product() {
+        echo '</div>';    }
+    add_action('woocommerce_after_single_product', 'add_booking_section_close_to_woocommerce_product');
+
+
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+    
     
