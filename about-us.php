@@ -30,6 +30,7 @@ $contact_us_text = get_field('contact_us_text');
             <span class="top-text-two"><?php echo esc_html($about_us_top_text_2); ?></span>
         </p>
 
+        <img src="http://cateringbbq.local/wp-content/uploads/2023/12/productimg-29.jpg" class="fixed-img" alt="">
 
 <div class="about-us flex-col" >
 

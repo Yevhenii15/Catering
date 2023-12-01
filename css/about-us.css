@@ -6,24 +6,37 @@
 }
 .flex-row{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 .top-bg-nav{
     width: 100%;
     box-shadow: 0 0 2em 0.3em #ffd0b45f;
 
 }
+.title{
+    position: fixed;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    left: 16em;
+    top: 2.5em;
+}
 
 .top-text-one{
     font-weight: 800;
     margin-left: -1.5em;
-    font-size: 1.5em;
+    font-family: var(--heading-font);
+    font-size: 3em;
 }
 .top-text-two{
     font-weight: 400;
     font-style: italic;
-    font-size: 1.5em;
     margin-right: -1.5em;
+    font-family: var(--heading-font);
+    font-size: 3em;
+
 
 }
 .about-us{
@@ -36,6 +49,9 @@
     height: 40vh;
     object-fit: cover;
 }
+.fixed-img{
+    display: none;
+}	
 .text-margin{
     margin: 0 5%;
 }
@@ -54,32 +70,26 @@ h3{
     font-weight: 400;
 
 }
-.top-text-one{
-    font-family: var(--heading-font);
 
-}
-.top-text-two{
-    font-family: var(--heading-font);
-
-}
 .top-bg-nav{
     object-position: 50% 25%;
 
 }
-.history-text h3, .family-text h3, .contact-us-text h3{
+/* .history-text h3, .family-text h3, .contact-us-text h3{
  text-align: center;
   
 }
 .history-text, .family-text, .contact-us-text{
     margin: 0 25%;     
     
-   }
+   } */
 .about-us p{
     line-height: 1.5em;
 }
 section{
     margin-bottom: 1em;
 }
+
 @media screen and (max-width:900px){
     .flex-row{
         flex-direction: column;
@@ -93,11 +103,22 @@ section{
     align-items: center;
     width: 100%;
     top: 2.5em;
+    left: 0;
     }
     #img{
         width: 100%;
         height: 10em;
 
+    }
+    .fixed-img {
+        display: block;
+        width: 100%;
+        height: 10em;
+        position: fixed;
+        object-fit: cover;
+        
+        top: 50%;
+        transform: translateY(-50%);
     }
     p{
         font-size: 1.2em;
@@ -133,9 +154,28 @@ section{
     .top-text-two{
         font-size: 2em;
     }
+    .about-us{
+        background: linear-gradient(
+            transparent 0%, 
+            #161211 30%, 
+            transparent 40%, 
+            #161211 50%,   
+            transparent 85%, 
+            #161211 100%);
+    }
+
+    
 }
 
 @media screen and (max-width: 600px){
+    .fixed-img {
+        display: block;
+        width: 100%;
+        height: 10em;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .top-bg-nav{
         object-position: 50% 25%;
     
@@ -169,6 +209,16 @@ section{
 
     .title{
         top: 3em;
+        left: 0;
+    }
+    .about-us{
+        background: linear-gradient(
+            transparent 0%, 
+            #161211 30%, 
+            transparent 40%, 
+            #161211 50%,   
+            transparent 85%, 
+            #161211 100%);
     }
 }
 
