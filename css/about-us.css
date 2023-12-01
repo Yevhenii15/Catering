@@ -78,6 +78,9 @@ h3{
 .about-us p{
     line-height: 1.5em;
 }
+footer{
+    bottom: -15em!important;
+}	
 
 
 @media screen and (min-width: 900px){
