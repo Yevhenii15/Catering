@@ -98,7 +98,7 @@ section{
         align-items: center;
         width: 100%;
         font-size: 1.1rem;
-        top: 10%;
+        top: 4em;
         left: 0;
     }
     .top-text-one{
@@ -189,6 +189,7 @@ section{
     }
     .title{
         font-size: 0.9rem!important;
+        top: 5em;
 
     }
     .text-margin{
