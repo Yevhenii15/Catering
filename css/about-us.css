@@ -4,10 +4,17 @@
   flex-direction: column;
   justify-content: center;
 }
-.flex-row{
+.flex-row-reverse{
     display: flex;
     flex-direction: row-reverse;
 }
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
+  align-items: center; */
+}
+
 .top-bg-nav{
     width: 100%;
     box-shadow: 0 0 2em 0.3em #ffd0b45f;
@@ -47,16 +54,13 @@
 .fixed-img{
     display: none;
 }	
-.text-margin{
-    margin: 0 5%;
-}
+
 
 .text-style p{
     font-family: var(--heading-font);
     font-size: 1.5em;
     color: var(--light-gray);
-    margin-top: -2%;
-
+    margin-top: -1em;
 }
 h3{
     font-family: var(--heading-font);
@@ -70,22 +74,35 @@ h3{
     object-position: 50% 25%;
 
 }
-/* .history-text h3, .family-text h3, .contact-us-text h3{
- text-align: center;
-  
-}
-.history-text, .family-text, .contact-us-text{
-    margin: 0 25%;     
-    
-   } */
+
 .about-us p{
     line-height: 1.5em;
 }
 
 
+@media screen and (min-width: 900px){
+    section{
+        height: 40vh;
+    }
+    .history-img, .competition-img, .family-img, .join-us-img, .contact-us-img{
+        width: 50vw;
+    }
+    .history-text, .competition-text, .family-text, .join-us-text, .contact-us-text{
+        width: 50vw;
+    }
+    h3{
+        margin-left: 0.5em;
+    }
+    .text-style p{
+            margin: -1em 1em 1em;
+    }
+}
 @media screen and (max-width:900px){
     .flex-row{
-        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    .flex-row-reverse{
+        flex-direction: column-reverse;
     }
   
     .title{
@@ -96,7 +113,7 @@ h3{
         align-items: center;
         width: 100%;
         font-size: 1.1rem;
-        top: 4em;
+        top: 3em;
         left: 0;
     }
     .top-text-one{
@@ -108,7 +125,7 @@ h3{
         left: 5%;
     }
     p{
-        margin: 0;
+        margin-bottom: 1em;
     }
     #img{
         width: 100%;
@@ -125,12 +142,7 @@ h3{
         top: 50%;
         transform: translateY(-50%);
     }
-    p{
-        font-size: 1.2em;
-    }
-    .history-text, .family-text, .contact-us-text{
-        margin: 0 5%;
-    }
+ 
     .text-margin{
         margin: 0 10%;
     }
@@ -141,13 +153,7 @@ h3{
         line-height: 2em;
     }
  
-    .history-text h3, .family-text h3, .contact-us-text h3, h3{
-        margin-left: -3%;
-        font-size: 1em;
-        font-weight: 400;
-        text-align: start; 
 
-    }
     .top-bg-nav{
         object-position: 50% 25%;
     
@@ -199,7 +205,7 @@ h3{
         letter-spacing: 0.1em;
         line-height: 1.5em;
     }
-    .history-text h3, .family-text h3, .contact-us-text h3{
+    h3{
         margin-left: -3%;
         font-size: 1em;
         font-weight: 400;

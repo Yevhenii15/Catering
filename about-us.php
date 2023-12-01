@@ -36,17 +36,17 @@ $contact_us_text = get_field('contact_us_text');
 
 <div class="about-us flex-col" >
 
-    <section class="history">
-        <div class="history-text flex-row text-margin text-style">
-            <h3><?php echo esc_html($history_title); ?></h3>
-            <p><?php echo esc_html($text_about_history); ?></p>
-        </div>
+    <section class="history flex-row">
         <div class="history-img">
             <img src="<?php echo esc_url($img2['url']); ?>" alt="about-us-history-img" id="img">
         </div>
+        <div class="history-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($history_title); ?></h3>
+            <p><?php echo esc_html($text_about_history); ?></p>
+        </div>
     </section>
 
-    <section class="competition flex-row">
+    <section class="competition flex-row-reverse">
         <div class="competition-img">
             <img src="<?php echo esc_url($img3['url']); ?>" alt="about-us-competition-img" id="img">
         </div>
@@ -57,16 +57,16 @@ $contact_us_text = get_field('contact_us_text');
     </section>
 
     <section class="family flex-row">
+        <div class="family-img">
+            <img src="<?php echo esc_url($img4['url']); ?>" alt="about-us-family-img" id="img">
+        </div>
         <div class="family-text flex-col text-margin text-style">
             <h3><?php echo esc_html($family_title); ?></h3>
             <p><?php echo esc_html($family_text); ?></p>
         </div>
-        <div class="family-img">
-            <img src="<?php echo esc_url($img4['url']); ?>" alt="about-us-family-img" id="img">
-        </div>
     </section>
 
-    <section class="join-us flex-row">
+    <section class="join-us flex-row-reverse">
         <div class="join-us-img">
             <img src="<?php echo esc_url($img5['url']); ?>" alt="about-us-join-us-img" id="img">
         </div>
@@ -76,13 +76,13 @@ $contact_us_text = get_field('contact_us_text');
         </div>
     </section>
 
-    <section class="contact-us">
-        <div class="contact-us-text flex-row text-margin text-style">
-            <h3><?php echo esc_html($contact_us_title); ?></h3>
-            <p><?php echo esc_html($contact_us_text); ?></p>
-        </div>
+    <section class="contact-us flex-row">
         <div class="contact-us-img">
             <img src="<?php echo esc_url($img2['url']); ?>" alt="about-us-contact-us-img" id="img">
+        </div>
+        <div class="contact-us-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($contact_us_title); ?></h3>
+            <p><?php echo esc_html($contact_us_text); ?></p>
         </div>
     </section>
 
