@@ -68,6 +68,18 @@
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
+    // Adding background image to item woocommerce shop
+    function add_bg_item_image_to_woocommerce_shop() {
+        echo '<img class="item-bg" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/item-bg.svg" alt="Background for item">';    }
+    add_action('woocommerce_shop_loop_item_title', 'add_bg_item_image_to_woocommerce_shop');
+
+    
+    function add_price_image_to_woocommerce_shop() {
+        echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/price.svg" alt="Price logo">';    }
+    add_action('woocommerce_after_shop_loop_item', 'add_price_image_to_woocommerce_shop');
+
+
+
 
 
 

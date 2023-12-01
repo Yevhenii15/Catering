@@ -36,7 +36,7 @@ body {
 /* Header */
 a.logo img{
   position: relative;
-  z-index: 1;
+  z-index: 10;
   margin: 1em;
 }
 .desktop-header{
@@ -164,7 +164,7 @@ footer .terms{
   height: 100vh!important;
   left: 0;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 5;
   background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/background-blur.png');
   background-size: cover;
   background-position: center bottom;
@@ -185,7 +185,7 @@ footer .terms{
   gap: .5em;
 }
 .dropdown-content a {
-    font-family: var(--heading-font);
+    font-family: var(--heading-font)!important;
     color: #f1f1f0;
     padding: 12px 16px;
     text-decoration: none;
