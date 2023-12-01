@@ -1,0 +1,131 @@
+.contact-modal {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-gray);
+
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wpcf7-form-sent .wpcf7-response-output {
+    color: var(--light-gray);
+    border-color: var(--green);
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+}
+.wpcf7-response-output {
+    border-radius: 15px;
+    margin: 2em 0.5em 1em;
+    padding: 0.2em 1em;
+    border: 2px solid #00a0d2;
+    text-align: center;
+}
+
+.wpcf7-form init {
+    flex-direction: column;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="name"],
+.wpcf7 input[type="submit"],
+.wpcf7 textarea
+{
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: calc(100% - .5em);
+    font-size: 1.3em;
+    padding: .4em 0  .4em 14px;
+    font-family: var( --main-font);
+    color: var(--light-gray);
+}
+
+::placeholder {
+    color: #f1f1f0;
+}
+
+p {
+    color: var(--light-gray);
+    padding: 3px;
+    
+
+}
+
+.wpcf7 input[type="submit" i] {
+ width: 100%;
+}
+
+.wpcf7 textarea{
+    height: 3em;
+    font-size: 1.5em;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--light-gray);
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: calc(100% - .6em);
+}
+
+
+.dropbtn{
+    display: none;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    font-size: 2em;
+    color: var(--light-gray);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .close {
+        right: auto;
+        left: 0;
+        position: absolute;
+    }
+    .wpcf7-form-sent .wpcf7-response-output {
+        color: var(--light-gray);
+        border-color: var(--green);
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        border-radius: 15px;
+    }
+    .wpcf7-response-output {
+        border-radius: 15px;
+        margin: 2em 0.5em 1em;
+        padding: 0.2em 1em;
+        border: 2px solid #00a0d2;
+        text-align: center;
+    }
+}

@@ -19,6 +19,7 @@ Author: Jonina, Yevhenii, Kian
       --orange: #d57d29;
       --dark-orange: #d86b27;
       --black: #060606;
+      --green: #2d7d2d;
 }
 
 body {
@@ -113,13 +114,16 @@ footer .terms{
 }
 @media screen and (max-width: 900px) {
   /* Mobile header */
+  body {
+    margin: auto;
+  }
   a.logo img{
     width: 4em;
     margin: 0 1em;
   }
   .mobile-header {
     display: flex;
-    width: 92vw;
+    width: calc(100% - 10%);
     z-index: 5;
     padding: 3% 5%;
     position: fixed;
