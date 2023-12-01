@@ -81,9 +81,7 @@ h3{
 .about-us p{
     line-height: 1.5em;
 }
-section{
-    margin-bottom: 1em;
-}
+
 
 @media screen and (max-width:900px){
     .flex-row{
@@ -103,7 +101,7 @@ section{
     }
     .top-text-one{
         position: relative;
-        left: -5%;
+        left: -10%;
     }
     .top-text-two{
         position: relative;
