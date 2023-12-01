@@ -1,0 +1,16 @@
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger{
+    display: none!important;
+
+} 
+.woocommerce div.product div.images .flex-control-thumbs{
+    display: none!important;
+}
+a:-webkit-any-link {
+    cursor: none!important;
+}
+.woocommerce div.product div.images img{
+    height: 20em;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+

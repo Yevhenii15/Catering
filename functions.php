@@ -24,6 +24,9 @@
         if (is_page('cart')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/cart.css');
         }
+        if (is_product()) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/product.css', array(), null, 'all');
+        }
         if (is_page('checkout')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/checkout.css');
         }
@@ -56,7 +59,10 @@
     // Remove wordpress bar
     add_filter( 'show_admin_bar', '__return_false' );
 
+
+
     // Shop
+
     // Adding top image and title to woocommerce shop
     function add_top_image_and_title_to_woocommerce_shop() {
         echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
@@ -73,31 +79,10 @@
         echo '<img class="item-bg" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/item-bg.svg" alt="Background for item">';    }
     add_action('woocommerce_shop_loop_item_title', 'add_bg_item_image_to_woocommerce_shop');
 
-    
+    // Price img
     function add_price_image_to_woocommerce_shop() {
         echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/price.svg" alt="Price logo">';    }
     add_action('woocommerce_after_shop_loop_item', 'add_price_image_to_woocommerce_shop');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -109,6 +94,9 @@
     remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
     // I don't whant to display sku, categories, tags on single product page
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    // Remove related products
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
    
     // Display custom post type content on single product page (Default ones)
     function display_related_products() {
@@ -172,8 +160,8 @@
         }
     }
     add_action('template_redirect', 'redirect_to_checkout_if_cart_not_empty_single_product');
-
-
+    
+        
 
 
 
