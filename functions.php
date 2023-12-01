@@ -30,15 +30,10 @@
         if (is_page('checkout')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/checkout.css');
         }
-        if (is_page('terms-of-service')) {
-            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/terms-of-service.css');
+        if (is_page(array('terms-of-service', 'privacy-policy', 'copyrigths'))) {
+            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/terms.css');
         }
-        if (is_page('privacy-policy')) {
-            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/privacy-policy.css');
-        }
-        if (is_page('copyrigths')) {
-            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/copyrigths.css');
-        }
+        
     }
     add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 

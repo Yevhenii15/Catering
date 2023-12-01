@@ -13,4 +13,17 @@ a:-webkit-any-link {
     object-fit: cover;
     object-position: 50% 50%;
 }
+.wpgs-nav .slick-slide {
+    display: none!important;
+}
+.wpgs-nav .slick-prev{
+    display: none!important;
+    background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/arrow-left.svg');
 
+}
+.wpgs-nav .slick-next{
+    display: none!important;
+}
+.wpgs-for .slick-arrow::before, .wpgs-nav .slick-prev::before, .wpgs-nav .slick-next::before{
+    color: #00000000!important;
+}

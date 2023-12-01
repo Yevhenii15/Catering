@@ -1,0 +1,41 @@
+@media screen and (max-width:600px){
+    .mobile-header{
+        width: 86vw;
+    }
+    .dropbtn img{
+        display: none!important;
+    }
+    a.logo img{
+        width: 6em!important;
+    }
+    body{
+        background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
+        margin: 0 7%!important;
+        background-color: rgba(0, 0, 0, 0.68);
+        width: 86%;
+        backdrop-filter: blur(15px);
+        height: 100vh;
+    }
+
+    h1{
+        font-size: 1.9rem;
+        font-weight: 300;
+        padding: 1.3em 0 7% 7% ;
+        margin: 0;
+    }
+    h2{
+        font-size: 1.2rem;
+    
+    }
+    .terms-section{
+        padding: 0 7% 7% 7%;
+        
+    }
+    footer{
+        display: none!important;
+    }
+    p{
+        font-size: 0.9rem;
+        margin: 0;
+    }
+}
