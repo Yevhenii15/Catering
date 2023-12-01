@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes() ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +48,7 @@
                         <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
                         <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
                     </div>
-                    
+                    <ul><?php pll_the_languages() ?></ul>
                 </div>
             </div>
             <a class="logo" href="<?php echo get_site_url(); ?>">

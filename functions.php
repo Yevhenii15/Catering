@@ -8,6 +8,7 @@
 
     // Add custom stylesheets
     function enqueue_custom_styles() {
+        
         // Check if it's the specific page where you want to apply the styles
         if (is_page('homepage')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/homepage.css');
@@ -210,6 +211,23 @@
     }
     
     add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
+
+    // Register custom menus
+
+    function register_custom_menus() {
+        register_nav_menus(
+            array(
+                'primary-menu' => __('Primary Menu', 'bustersworld'), // You can change 'Primary Menu' to your desired menu name
+            )
+        );
+    }
+    add_action('init', 'register_custom_menus');
+
+    if (function_exists('pll_current_language') && pll_current_language() == 'da') {
+    wp_enqueue_style('danish-styles', get_template_directory_uri() . '/css/danish-styles.css');
+} else {
+    wp_enqueue_style('english-styles', get_template_directory_uri() . '/css/english-styles.css');
+}
     function add_booking_section_to_woocommerce_product() {
         echo '<div class="booking-section">';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_booking_section_to_woocommerce_product');
