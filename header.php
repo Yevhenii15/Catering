@@ -7,7 +7,7 @@
     <?php wp_head() ?>
 </head>
 <body>
-
+    <div class="for-checkout"></div>
     <header class="desktop-header">          
        <a class="logo" href="<?php echo get_site_url(); ?>">
             <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Logo.svg" alt="">

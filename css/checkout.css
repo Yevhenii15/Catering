@@ -1,0 +1,59 @@
+.for-checkout{
+    background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-checkout.png');
+    position: fixed;
+    height: 10em;
+    z-index: 4;
+    width: 100vw;
+    background-size: cover;
+    background-position: center bottom;
+}
+.wc-block-components-sidebar-layout{
+    top: 13em;
+    margin: 0 5%!important;
+}
+.wc-block-components-checkout-step--with-step-number .wc-block-components-checkout-step__title::before {
+    display: none!important;
+}
+.wc-block-components-form .wc-block-components-checkout-step{
+    background-color: #69402067!important;
+    backdrop-filter: blur(10px);
+    padding: 3% 5%!important;
+    border-radius: 15px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+}
+
+.wc-block-components-form .wc-block-components-checkout-step label{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.269)!important;
+    color: var(--light-gray)!important;
+
+}
+.wc-block-components-form .wc-block-components-text-input input:-webkit-autofill, .wc-block-components-form .wc-block-components-text-input.is-active input[type=email], .wc-block-components-form .wc-block-components-text-input.is-active input[type=number], .wc-block-components-form .wc-block-components-text-input.is-active input[type=tel], .wc-block-components-form .wc-block-components-text-input.is-active input[type=text], .wc-block-components-form .wc-block-components-text-input.is-active input[type=url], .wc-block-components-text-input input:-webkit-autofill, .wc-block-components-text-input.is-active input[type=email], .wc-block-components-text-input.is-active input[type=number], .wc-block-components-text-input.is-active input[type=tel], .wc-block-components-text-input.is-active input[type=text], .wc-block-components-text-input.is-active input[type=url]{
+    width: 100%!important;
+    background-color: var(--button-bg)!important;
+    border: 1px solid var(--gray-shade);
+    border-radius: 25px;
+    font-size: .8em;
+    backdrop-filter: blur(10px);
+    width: calc(100% - 1em)!important;
+    padding: 1em 2em!important;
+    font-family: var( --main-font);
+    color: var(--light-gray);
+}
+.wc-block-components-form .wc-block-components-text-input.is-active label, .block-components-text-input.is-active label{
+    display: none!important;
+}
+.wc-block-components-form .wc-block-components-text-input input[type=email], .wc-block-components-form .wc-block-components-text-input input[type=number], .wc-block-components-form .wc-block-components-text-input input[type=tel], .wc-block-components-form .wc-block-components-text-input input[type=text], .wc-block-components-form .wc-block-components-text-input input[type=url], .wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=number], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url]{
+    width: 100%!important;
+    background-color: var(--button-bg)!important;
+    border: 1px solid var(--gray-shade);
+    border-radius: 25px!important;
+    font-size: .8em;
+    backdrop-filter: blur(10px);
+    width: calc(100% - 1em)!important;
+    padding: 1em 2em!important;
+    font-family: var( --main-font);
+    color: var(--light-gray);
+}
+.wc-block-components-form .wc-block-components-text-input label, .wc-block-components-text-input label{
+    margin-left: 1em!important;
+}

@@ -281,4 +281,5 @@
     }
     add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
     
-    
+
+
