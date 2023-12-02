@@ -38,6 +38,7 @@ main p{
     margin: 0;
     font-family: var(--main-font);
     font-weight: 100;
+    line-height: 1.5em;
 
 }
 @media screen and (min-width: 900px){

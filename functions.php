@@ -31,7 +31,7 @@
         if (is_page('checkout')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/checkout.css');
         }
-        if (is_page(array('terms-of-service', 'privacy-policy', 'copyrigths'))) {
+        if (is_page(array('terms-of-service', 'privacy-policy', 'copyrights'))) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/terms.css');
         }
         
