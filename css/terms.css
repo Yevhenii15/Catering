@@ -13,7 +13,6 @@ body{
 
 h1{
     font-size: 2rem;
-    /* padding: 1.6em 0 6% 120px; */
     margin: 0;
 }
 h2{
@@ -27,9 +26,7 @@ h2{
     justify-content: center;
     flex-wrap: wrap;    
 }
-/* .wrapper{
-    width: 60%;
-} */
+
 footer{
     display: none!important;
 }

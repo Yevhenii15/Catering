@@ -90,10 +90,10 @@ footer{
         height: 40vh;
         width: 100%;
     }
-    .section-img{
+    .history-img, .competition-img, .family-img, .join-us-img, .contact-us-img{
         width: 50%;
     }
-    .section-text{
+    .history-text, .competition-text, .family-text, .join-us-text, .contact-us-text{
         width: 50%;
     }
     h3{
@@ -342,7 +342,10 @@ p {
     color: var(--light-gray);
 }
 
-
+footer {
+    position: fixed;
+    bottom: 0;
+}
 
 @media screen and (max-width: 900px) {
     .close {
