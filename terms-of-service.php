@@ -20,31 +20,34 @@ $description_of_order_confirmation = get_field('description_of_order_confirmatio
 $cancellation_policy = get_field('cancellation_policy');
 $description_of_cancellation_policy = get_field('description_of_cancellation_policy');
 ?>
-<h1><?php echo $title; ?></h1>
 <div class="terms-section">
-    <div class="section">
-        <h2><?php echo $services_provided; ?></h2>
-        <p><?php echo $description_of_services_provided; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $deposit_and_payment; ?></h2>
-        <p><?php echo $description_of_deposit_and_payment; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $customer_responsibilities; ?></h2>
-        <p><?php echo $description_of_customer_responsibilities; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $price_adjustments; ?></h2>
-        <p><?php echo $description_of_price_adjustments; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $order_confirmation; ?></h2>
-        <p><?php echo $description_of_order_confirmation; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $cancellation_policy; ?></h2>
-        <p><?php echo $description_of_cancellation_policy; ?></p>
+    <div class="wrapper">
+        <h1><?php echo $title; ?></h1>
+
+        <div class="section">
+            <h2><?php echo $services_provided; ?></h2>
+            <p><?php echo $description_of_services_provided; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $deposit_and_payment; ?></h2>
+            <p><?php echo $description_of_deposit_and_payment; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $customer_responsibilities; ?></h2>
+            <p><?php echo $description_of_customer_responsibilities; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $price_adjustments; ?></h2>
+            <p><?php echo $description_of_price_adjustments; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $order_confirmation; ?></h2>
+            <p><?php echo $description_of_order_confirmation; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $cancellation_policy; ?></h2>
+            <p><?php echo $description_of_cancellation_policy; ?></p>
+        </div>
     </div>
 </div>
 

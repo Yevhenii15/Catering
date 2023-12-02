@@ -37,9 +37,10 @@
     border: 2px solid #00a0d2;
     text-align: center;
 }
-
-.wpcf7-form init {
+ 
+.wpcf7-form {
     flex-direction: column;
+    margin: 0 2em;
 }
 
 .wpcf7 input[type="text"],
@@ -57,6 +58,8 @@
     padding: .4em 0  .4em 14px;
     font-family: var( --main-font);
     color: var(--light-gray);
+    resize: none;
+
 }
 
 ::placeholder {

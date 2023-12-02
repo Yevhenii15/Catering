@@ -18,23 +18,25 @@ $description_of_data_retention = get_field('description_of_data_retention');
 
 ?>
 <!-- display title -->
-<h1><?php echo $title; ?></h1>
 <div class="terms-section">
-    <div class="section">
-        <h2><?php echo $information_collection; ?></h2>
-        <p><?php echo $description_of_information_collection; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $data_security; ?></h2>
-        <p><?php echo $description_of_data_security; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $access_to_customer_information; ?></h2>
-        <p><?php echo $description_of_access_to_customer_information; ?></p>
-    </div>
-    <div class="section">
-        <h2><?php echo $data_retention; ?></h2>
-        <p><?php echo $description_of_data_retention; ?></p>
+    <div class="wrapper">
+        <h1><?php echo $title; ?></h1>
+        <div class="section">
+            <h2><?php echo $information_collection; ?></h2>
+            <p><?php echo $description_of_information_collection; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $data_security; ?></h2>
+            <p><?php echo $description_of_data_security; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $access_to_customer_information; ?></h2>
+            <p><?php echo $description_of_access_to_customer_information; ?></p>
+        </div>
+        <div class="section">
+            <h2><?php echo $data_retention; ?></h2>
+            <p><?php echo $description_of_data_retention; ?></p>
+        </div>
     </div>
 </div>
 <?php get_footer(); ?>
