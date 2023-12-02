@@ -147,7 +147,7 @@ footer{
    .woocommerce ul.products li.product .price{
     position: absolute;
     z-index: 2;
-    top: -7em;
+    top: 7.3em;
     right: 6%;
     color: var(--light-gray);
     font-size: 1.5em;
