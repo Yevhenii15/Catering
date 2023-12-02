@@ -1,116 +1,116 @@
 
 .desktop-header{
- position: static;
-}
-body{
-    background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
-    margin: 0 0!important;
-    background-color: rgba(0, 0, 0, 0.68);
-    width: 100%;
-    backdrop-filter: blur(15px);
-    height: 100%;
-}
-
-h1{
-    font-size: 2rem;
-    margin: 0;
-}
-h2{
-    font-size: 1rem;
-    font-weight: 600;
-
-}
-.terms-section{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;    
-}
-
-footer{
-    display: none!important;
-}
-main p{
-    font-size: 1rem;
-    margin: 0;
-    font-family: var(--main-font);
-    font-weight: 100;
-    line-height: 1.5em;
-
-}
-@media screen and (min-width: 900px){
-    .wrapper{
-        display: flex;
-        width: 60%;
-        gap: 1.5em;
-        flex-direction: column;  
- }
-}
-    
-
-
-@media screen and (max-width:900px){
-    .mobile-header{
-        position: static;
-    }   
-    body{
-        height: 100%;
+    position: static;
+   }
+   body{
+       background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
+       margin: 0 0!important;
+       background-color: rgba(0, 0, 0, 0.68);
+       width: 100%;
+       backdrop-filter: blur(15px);
+       height: 100%;
+   }
+   
+   h1{
+       font-size: 2rem;
+       margin: 0;
+   }
+   h2{
+       font-size: 1rem;
+       font-weight: 600;
+   
+   }
+   .terms-section{
+       display: flex;
+       align-content: center;
+       justify-content: center;
+       flex-wrap: wrap;    
+   }
+   
+   footer{
+       display: none!important;
+   }
+   main p{
+       font-size: 1rem;
+       margin: 0;
+       font-family: var(--main-font);
+       font-weight: 100;
+       line-height: 1.5em;
+   
+   }
+   @media screen and (min-width: 900px){
+       .wrapper{
+           display: flex;
+           width: 60%;
+           gap: 1.5em;
+           flex-direction: column;  
     }
-    .section{
-        margin-bottom: 1.5rem;
-    }
-    .wrapper{
-        width: 70%;
-    }
-}
-    
-
-
-@media screen and (max-width:600px){
-    .mobile-header{
-        position: fixed;
-    }
-    .mobile-header{
-        width: 86vw;
-    }
-    .dropbtn img{
-        display: none!important;
-    }
-    a.logo img{
-        width: 6em!important;
-    }
-    body{
-        background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
-        margin: 0 7%!important;
-        /* background-color: rgba(0, 0, 0, 0.68); */
-        width: 86%;
-        backdrop-filter: blur(25px);
-        height: 100%;
-    }
-
-    h1{
-        font-size: 1.9rem;
-        font-weight: 300;
-        padding: 1.3em 0 7% 0 ;
-        margin: 0;
-    }
-    h2{
-        font-size: 1.2rem;
-    
-    }
-    .wrapper{
-        width: 100%;
-    }
-    .terms-section{
-        padding: 0 7% 7% 7%;
-        
-    }
-    footer{
-        display: none!important;
-    }
-    main p{
-        font-size: 0.9rem;
-        margin: 0;
-    }
-
-}
+   }
+       
+   
+   
+   @media screen and (max-width:900px){
+       .mobile-header{
+           position: static;
+       }   
+       body{
+           height: 100%;
+       }
+       .section{
+           margin-bottom: 1.5rem;
+       }
+       .wrapper{
+           width: 70%;
+       }
+   }
+       
+   
+   
+   @media screen and (max-width:600px){
+       .mobile-header{
+           position: fixed;
+       }
+       .mobile-header{
+           width: 86vw;
+       }
+       .dropbtn img{
+           display: none!important;
+       }
+       a.logo img{
+           width: 6em!important;
+       }
+       body{
+           background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
+           margin: 0 7%!important;
+           /* background-color: rgba(0, 0, 0, 0.68); */
+           width: 86%;
+           backdrop-filter: blur(25px);
+           height: 100%;
+       }
+   
+       h1{
+           font-size: 1.9rem;
+           font-weight: 300;
+           padding: 1.3em 0 7% 0 ;
+           margin: 0;
+       }
+       h2{
+           font-size: 1.2rem;
+       
+       }
+       .wrapper{
+           width: 100%;
+       }
+       .terms-section{
+           padding: 0 7% 7% 7%;
+           
+       }
+       footer{
+           display: none!important;
+       }
+       main p{
+           font-size: 0.9rem;
+           margin: 0;
+       }
+   
+   }
