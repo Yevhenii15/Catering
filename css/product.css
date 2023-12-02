@@ -1,3 +1,6 @@
+.woocommerce img, .woocommerce-page img{
+    height: 10em;
+}
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger{
     display: none!important;
 
@@ -27,6 +30,7 @@ a:-webkit-any-link {
     left: 0.7rem;
     margin: 0!important;
     top: -7rem !important;
+    z-index: 2;
 }
 
 .wpgs-nav .slick-next{
@@ -42,13 +46,12 @@ a:-webkit-any-link {
 }
 .item-bg{
     position: absolute;
-    top: 13em;
+    top: 13em!important;
     backdrop-filter: blur(10px);
     z-index: -1;
-    height: auto!important;
     width: 100%;
     object-fit: cover;
-    height: 13em!important;
+    height: 13em;
     object-position: 50% 0;
     backdrop-filter: blur(5px);
 }
@@ -63,8 +66,8 @@ a:-webkit-any-link {
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
 
-   }
-   .woocommerce div.product p.price, .woocommerce div.product span.price{
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price{
     position: absolute;
     z-index: 2;
     top: 8em;
@@ -73,8 +76,8 @@ a:-webkit-any-link {
     font-size: 1.5em;
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
-   }
-   .woocommerce-product-details__short-description p{
+}
+.woocommerce-product-details__short-description p{
     color: var(--light-gray);
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
@@ -82,43 +85,350 @@ a:-webkit-any-link {
     margin: 0;
     position: relative;
     top: -1.5em;
-   }
-   .icon-price{
+}
+.icon-price{
     width: 9em;
     position: absolute;
     right: 3%;
     top: 15.5em;
-   }
-   .item-text{
+}
+.item-text{
     width: 100%;
     text-align: center;
     font-size: 1.5em;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
 
-   }
-   .category{
-    margin: 0 10% ;
+}
+.category{
+    margin: 0 2rem;
     font-weight: 200;
     font-size: 1.5em;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
-
-   }
-   .including-item{
+}
+.including-item{
     display: flex;
     justify-content: space-between;
     margin: 10%;
-   }
-   .including-item img{
+}
+.including-item img{
     width: 6em;
     height: 6em;
     object-fit: cover;
     object-position: 50% 50%;
-   }
-   .including-item:nth-child(odd) img {
+}
+.including-item:nth-child(odd) img {
     order: 2; /* Reverse the order for odd elements */
 }
+.including-item .title-description{
+    width: 60%;
+}
+.including-item .title-description h4{
+    margin: 0;
+    font-size: 1.1em;
+}
+.including-item .title-description p{
+    margin: .5em 0;
+}
+.mbfw-date-picker-section label{
+    display: none!important;
+}
+.booking-section{
+    background-color: #69402067;
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 5% 10%;
+}
+.booking{
+    text-align: center;
+    font-size: 1.5em;
+    margin: .5em;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+}
+.time{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+
+}
+.mbfw-additionl-detail-listing-section__wrapper{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+}
+.mbfw-date-picker-section__wrapper{
+    width: 100%;
+}
+.mbfw-additionl-detail-listing-section{
+    width: 100%!important;
+}
+.mbfw-additionl-detail-listing-section{
+    max-width: 100%!important;
+}
+.mbfw-additionl-detail-listing-section input[type=number]{
+    width: 100%!important;
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    border-radius: 25px;
+    font-size: .8em;
+    backdrop-filter: blur(10px);
+    width: calc(100% - .5em);
+    padding: .5em .1em;
+    font-family: var( --main-font);
+    color: var(--light-gray);
+}
+.wps_single_cal_hourly{
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    border-radius: 25px;
+    font-size: .8em;
+    backdrop-filter: blur(10px);
+    width: calc(100% - .5em);
+    padding: 1em .5em;
+    font-family: var( --main-font);
+    color: var(--light-gray);
+}
+::placeholder {
+    color: #f1f1f0;
+    font-size: 1em;
+}
+.mwb_mbfw_included_service_title{
+    margin: 1em 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0);
+}
+.entry-summary .mwb-mbfw-cart-page-data input{
+    margin: .5em 0;
+}
+.mwb_mbfw_detail-listing-wrap .mbfw-additionl-detail-listing-section{
+    width: auto!important;
+    max-width: 15%!important;
+}
+.mwb_mbfw_detail-listing-wrap .mbfw-additionl-detail-listing-section:nth-child(odd){
+    width: auto!important;
+    max-width: 70%!important;
+}
+.mwb-bfwp-booking-quantity__public-show{
+    display: none!important;
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled[disabled]{
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    font-family: var(--heading-font);
+    padding: .3em 0;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+.mbfw-date-picker-section {
+    max-width: 100%;
+}
+input#wps_booking_single_calendar_form{
+    width: 97%!important;
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled[disabled]{
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    font-family: var(--heading-font);
+    padding: .3em 0;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt{
+    background-color: var(--button-bg);
+    border: 1px solid var(--gray-shade);
+    font-family: var(--heading-font);
+    padding: .3em 0;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled[disabled]:hover{
+    background-color: var(--button-bg);
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:hover{
+    background-color: var(--button-bg);
+}
+@media screen and (min-width:500px) and (max-width:768px){
+    .top-bg-nav{
+        display: none!important;
+    }
+    .item-bg{
+        height: 11em!important;
+    }
+    .item-text{
+        margin: 1.5rem 0;
+    }
+    .including-item {
+        margin: 1rem 2rem;
+        width: 36.7%;
+    }
+    .including-items{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .including-item img{
+        width: 5em;
+        height: 5em;
+    }
     .including-item .title-description{
-        width: 65%;
+        width: 60%;
+    }
+    .including-item:nth-child(odd) img {
+        order: 0; /* Reverse the order for odd elements */
+    }
+    .title-description{
+        margin-left: 1em;
+    }
+    .including-item .title-description h4{
+        font-size: 0.9em;
+    }
+    .including-item .title-description p{
+        font-size: 0.8em;
+    }
+    .mwb_mbfw_detail-listing-wrap {
+        justify-content: space-between;
+    }
+    .mbfw-date-picker-section {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .top-bg-nav{
+        display: none!important;
+    }
+    .woocommerce div.product div.images .woocommerce-product-gallery__trigger{
+        display: none!important;
+    
+    } 
+    .woocommerce div.product div.images .flex-control-thumbs{
+        display: none!important;
+    }
+    a:-webkit-any-link {
+        cursor: none!important;
+    }
+    .woocommerce div.product div.images img{
+        height: 15em;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    .slick-slider .slick-track, .slick-slider .slick-list {
+        z-index: -1;
+    }
+    .wpgs-nav .slick-slide {
+        display: none!important;
+    }
+    .wpgs-nav .slick-prev{
+        background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/arrow-left.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 0.7rem;
+        margin: 0!important;
+        top: -7rem !important;
+    }
+    
+    .wpgs-nav .slick-next{
+        background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/arrow-right.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;    
+        position: absolute;
+        right: 1rem;
+        top: -7rem !important;
+    }
+    .wpgs-for .slick-arrow::before, .wpgs-nav .slick-prev::before, .wpgs-nav .slick-next::before{
+        color: #00000000!important;
+    }
+    .item-bg{
+        position: absolute;
+        top: 13em;
+        backdrop-filter: blur(10px);
+        z-index: -1;
+        width: 100%;
+        object-fit: cover;
+        height: 13em!important;
+        object-position: 50% 0;
+        backdrop-filter: blur(5px);
+    }
+    .woocommerce div.product .product_title{
+        position: relative;
+        z-index: 2;
+        top: -0.7em;
+        left: 0.7em;
+        width: 90%;
+        color: var(--light-gray);
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    
+    }
+    .woocommerce div.product p.price, .woocommerce div.product span.price{
+        position: absolute;
+        z-index: 2;
+        top: 8em;
+        right: 6%;
+        color: var(--light-gray);
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    }
+    .woocommerce-product-details__short-description p{
+        color: var(--light-gray);
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+        padding: 0  5em 0 2em;
+        margin: 0;
+        position: relative;
+        top: -1.5em;
+    }
+    .icon-price{
+        width: 9em;
+        position: absolute;
+        right: 3%;
+        top: 15.5em;
+    }
+    .item-text{
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    
+    }
+    .category{
+        margin: 0 2rem ;
+        font-weight: 200;
+        font-size: 1.5em;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    }
+    .including-item{
+        display: flex;
+        justify-content: space-between;
+        margin: 2em;
+    }
+    .including-item img{
+        width: 7em;
+        height: 7em;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    .including-item:nth-child(odd) img {
+        order: 2; /* Reverse the order for odd elements */
+    }
+    .including-item .title-description{
+        width: 60%;
     }
     .including-item .title-description h4{
         margin: 0;
@@ -141,14 +451,14 @@ a:-webkit-any-link {
         font-size: 1.5em;
         margin: .5em;
         text-shadow: 4px 4px 8px rgba(0, 0, 0);
-
+    
     }
     .time{
         margin: 0;
         font-size: 1.5em;
         font-weight: 300;
         text-shadow: 4px 4px 8px rgba(0, 0, 0);
-
+    
     }
     .mbfw-additionl-detail-listing-section__wrapper{
         margin: 0;
@@ -213,14 +523,20 @@ a:-webkit-any-link {
         display: none!important;
     }
     :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:disabled[disabled]{
-    background-color: var(--button-bg);
-    border: 1px solid var(--gray-shade);
-    font-family: var(--heading-font);
-    padding: .3em 0;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    font-size: 2em;
-    width: 100%;
-    text-align: center;
+        background-color: var(--button-bg);
+        border: 1px solid var(--gray-shade);
+        font-family: var(--heading-font);
+        padding: .3em 0;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        font-size: 2em;
+        width: 100%;
+        text-align: center;
     }
-    
+    .mbfw-date-picker-section {
+        max-width: 100%;
+    }
+    input#wps_booking_single_calendar_form {
+        width: 95%!important;
+    }
+}

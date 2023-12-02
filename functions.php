@@ -182,6 +182,7 @@
     }
     
     function display_products_by_category($products) {
+        echo '<div class="including-items">';
         foreach ($products as $related_product) {
             // Set up post data for the current related product
             setup_postdata($related_product);
@@ -208,6 +209,7 @@
             // Reset post data
             wp_reset_postdata();
         }
+        echo '</div>';
     }
     
     add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
@@ -270,5 +272,10 @@
 
 
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+    // Adding top image to woocommerce product
+    function add_top_image_to_woocommerce_product() {
+        echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
+    }
+    add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
     
     
