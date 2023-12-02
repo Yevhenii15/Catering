@@ -280,7 +280,7 @@
         echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
     }
     add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
-    
+
     function change_billing_address_text() {
         ?>
         <script type="text/javascript">
@@ -305,3 +305,33 @@
     
 
 
+// Redirect user after successful order to home page and set a session variable
+function custom_redirect_after_checkout( $order_id ) {
+    $order = wc_get_order( $order_id );
+
+    // Check if the order is valid
+    if ( ! $order ) {
+        return;
+    }
+
+    // Set a session variable to indicate a successful order
+    WC()->session->set( 'order_placed', true );
+
+    // Redirect to the home page
+    wp_redirect( home_url() );
+    exit;
+}
+add_action( 'woocommerce_thankyou', 'custom_redirect_after_checkout', 10, 1 );
+
+// Display a notification on the home page if an order has been placed
+function custom_order_placed_notification() {
+    // Check if the session variable is set
+    if ( WC()->session->get( 'order_placed' ) ) {
+        // Display your notification message
+        wc_add_notice( 'Your order has been placed successfully!', 'success' );
+
+        // Unset the session variable to prevent showing the message on subsequent visits
+        WC()->session->__unset( 'order_placed' );
+    }
+}
+add_action( 'wp', 'custom_order_placed_notification' );
