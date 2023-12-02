@@ -1,7 +1,6 @@
 /* Background Styles */
 body {
   background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
-
   }
   .desktop-header{
     display: block!important;
@@ -17,7 +16,6 @@ body {
     flex-grow: 1;
   }
   /* Header Styles */
-  
   .titles {
     position: absolute;
     top: 8em;
@@ -42,8 +40,6 @@ body {
     display: flex;
     justify-content: end;
   }
-  
-  
   /* Navigation Styles */
   nav {
     position: absolute;
@@ -57,8 +53,6 @@ body {
     bottom: 5%;
     align-items: flex-end;
   }
-  
-  
   nav a,
   a.menu {
     color: var(--light-gray);
@@ -72,7 +66,6 @@ body {
     font-style: normal;
     text-align: center;
   }
-  
   a.menu img{
     display: block;
     width: 50%;
@@ -166,7 +159,7 @@ body {
     gap: 0.5em!important;
     }
   }
-  @media screen and (max-width: 900px) and (max-height: 850px) {
+  @media screen and (max-width: 900px) and (max-height: 900px) {
     a.logo img{
       width: 5em;
       margin-top: 1em;
