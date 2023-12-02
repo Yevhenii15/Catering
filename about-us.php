@@ -9,20 +9,20 @@ get_header();
 $about_us_top_img = get_field('about_us_top_img');
 $about_us_top_text = get_field('about_us_top_text');
 $about_us_top_text_2 = get_field('about_us_top_text_2');
-$history_title = get_field('history_title');
-$text_about_history = get_field('text_about_history');
+$section_1_title = get_field('section_1_title');
+$section_1_paragraph = get_field('section_1_paragraph');
 $img2 = get_field('img2');
-$text_about_competition_title = get_field('text_about_competition_title');
-$text_about_competition = get_field('text_about_competition');
+$section_2_title = get_field('section_2_title');
+$section_2_paragraph = get_field('section_2_paragraph');
 $img3 = get_field('img3');
-$family_title = get_field('family_title');
-$family_text = get_field('family_text');
+$section_3_title = get_field('section_3_title');
+$section_3_paragraph = get_field('section_3_paragraph');
 $img4 = get_field('img4');
-$join_us_title = get_field('join_us_title');
-$join_us_text = get_field('join_us_text');
+$section_4_title = get_field('section_4_title');
+$section_4_paragraph = get_field('section_4_paragraph');
 $img5 = get_field('img5');
-$contact_us_title = get_field('contact_us_title');
-$contact_us_text = get_field('contact_us_text');
+$section_5_title = get_field('section_5_title');
+$section_5_paragraph = get_field('section_5_paragraph');
 
 ?>
     <img class="top-bg-nav"src="<?php echo esc_url($about_us_top_img['url']); ?>" alt="about-us-top-img" >
@@ -36,53 +36,53 @@ $contact_us_text = get_field('contact_us_text');
 
 <div class="about-us flex-col" >
 
-    <section class="history flex-row">
-        <div class="history-text flex-col text-margin text-style">
-            <h3><?php echo esc_html($history_title); ?></h3>
-            <p><?php echo esc_html($text_about_history); ?></p>
+    <section class="section-1 flex-row">
+        <div class="section-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($section_1_title); ?></h3>
+            <p><?php echo esc_html($section_1_paragraph); ?></p>
         </div>
-        <div class="history-img">
+        <div class="section-img">
             <img src="<?php echo esc_url($img2['url']); ?>" alt="about-us-history-img" id="img">
         </div>
     </section>
 
-    <section class="competition flex-row-reverse">
-        <div class="competition-text flex-col text-margin text-style">
-            <h3><?php echo esc_html($text_about_competition_title); ?></h3>
-            <p><?php echo esc_html($text_about_competition); ?></p>
+    <section class="section-2 flex-row-reverse">
+        <div class="section-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($section_2_title); ?></h3>
+            <p><?php echo esc_html($section_2_paragraph); ?></p>
         </div>
-        <div class="competition-img">
+        <div class="section-img">
             <img src="<?php echo esc_url($img3['url']); ?>" alt="about-us-competition-img" id="img">
         </div>
     </section>
 
-    <section class="family flex-row">
-        <div class="family-text flex-col text-margin text-style">
-            <h3><?php echo esc_html($family_title); ?></h3>
-            <p><?php echo esc_html($family_text); ?></p>
+    <section class="section-3 flex-row">
+        <div class="section-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($section_3_title); ?></h3>
+            <p><?php echo esc_html($section_3_paragraph); ?></p>
         </div>
-        <div class="family-img">
+        <div class="section-img">
             <img src="<?php echo esc_url($img4['url']); ?>" alt="about-us-family-img" id="img">
         </div>
     </section>
 
-    <section class="join-us flex-row-reverse">
-        <div class="join-us-text flex-col text-margin text-style">
-            <h3><?php echo esc_html($join_us_title); ?></h3>
-            <p><?php echo esc_html($join_us_text); ?></p>
+    <section class="section-4 flex-row-reverse">
+        <div class="section-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($section_4_title); ?></h3>
+            <p><?php echo esc_html($section_4_paragraph); ?></p>
         </div>
-        <div class="join-us-img">
+        <div class="section-img">
             <img src="<?php echo esc_url($img5['url']); ?>" alt="about-us-join-us-img" id="img">
         </div>
     </section>
 
-    <section class="contact-us flex-row">
-        <div class="contact-us-text flex-col text-margin text-style">
-            <h3><?php echo esc_html($contact_us_title); ?></h3>
-            <p><?php echo esc_html($contact_us_text); ?></p>
+    <section class="section-5 flex-row">
+        <div class="section-text flex-col text-margin text-style">
+            <h3><?php echo esc_html($section_5_title); ?></h3>
+            <p><?php echo esc_html($section_5_paragraph); ?></p>
         </div>
-        <div class="contact-us-img">
-        <?php echo do_shortcode('[contact-form-7 id="5db62c1" title="Contact"]'); ?>
+        <div class="section-img">
+            <?php echo do_shortcode('[contact-form-7 id="5db62c1" title="Contact"]'); ?>
         </div>
     </section>
 

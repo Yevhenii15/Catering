@@ -10,7 +10,7 @@
                 </div>
                 <div class="terms">
                     <a href="<?php echo get_site_url(); ?>/terms-of-service">Terms of Service</a>
-                    <a href="<?php echo get_site_url(); ?>/copyrigths">Copyrights</a>
+                    <a href="<?php echo get_site_url(); ?>/copyrights">Copyrights</a>
                     <a href="<?php echo get_site_url(); ?>/privacy-policy">Privacy Policy</a>
                 </div>
             </footer>
