@@ -281,5 +281,27 @@
     }
     add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
     
+    function change_billing_address_text() {
+        ?>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                // Replace 'Address & Personal Info' with the desired text
+                var newText = 'Address & Personal Info';
+    
+                // Find the h2 element by its class name
+                var h2Element = document.querySelector('.wc-block-components-title.wc-block-components-checkout-step__title');
+    
+                // Check if the h2 element is found
+                if (h2Element) {
+                    // Update the text content of the h2 element
+                    h2Element.textContent = newText;
+                }
+            });
+        </script>
+        <?php
+    }
+    
+    add_action('wp_footer', 'change_billing_address_text');
+    
 
 
