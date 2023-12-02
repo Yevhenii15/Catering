@@ -1,5 +1,9 @@
+body{
+    height: 100vh!important;
+}
 .woocommerce img, .woocommerce-page img{
     height: 10em;
+    max-width: 100vw;
 }
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger{
     display: none!important;
@@ -12,9 +16,11 @@ a:-webkit-any-link {
     cursor: none!important;
 }
 .woocommerce div.product div.images img{
-    height: 15em;
+    height: 25em;
     object-fit: cover;
     object-position: 50% 50%;
+    top: 3em;
+    position: relative;
 }
 .slick-slider .slick-track, .slick-slider .slick-list {
     z-index: -1;
@@ -29,7 +35,7 @@ a:-webkit-any-link {
     position: absolute;
     left: 0.7rem;
     margin: 0!important;
-    top: -7rem !important;
+    top: -10rem !important;
     z-index: 2;
 }
 
@@ -39,27 +45,34 @@ a:-webkit-any-link {
     background-size: 100% 100%;    
     position: absolute;
     right: 1rem;
-    top: -7rem !important;
+    top: -10rem !important;
 }
 .wpgs-for .slick-arrow::before, .wpgs-nav .slick-prev::before, .wpgs-nav .slick-next::before{
     color: #00000000!important;
 }
+.wpgs-for.slick-initialized, .wpgs-nav.slick-initialized {
+    width: 50vw!important;
+    position: relative;
+    top: 2em;
+    left: 10%!important;
+}
 .item-bg{
     position: absolute;
-    top: 13em!important;
+    top: 33em!important;
     backdrop-filter: blur(10px);
     z-index: -1;
-    width: 100%;
+    width: 50.2vw!important;
     object-fit: cover;
-    height: 13em;
+    height: 12em!important;
     object-position: 50% 0;
+    left: -46.9vw;
     backdrop-filter: blur(5px);
 }
 .woocommerce div.product .product_title{
-    position: relative;
-    z-index: 2;
-    top: -0.7em;
-    left: 0.7em;
+    position: absolute;
+    z-index: 3;
+    top: 25em;
+    left: -45vw;
     width: 90%;
     color: var(--light-gray);
     font-size: 1.5em;
@@ -70,27 +83,38 @@ a:-webkit-any-link {
 .woocommerce div.product p.price, .woocommerce div.product span.price{
     position: absolute;
     z-index: 2;
-    top: 8em;
-    right: 6%;
+    top: 15.7em;
     color: var(--light-gray);
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    left: -10vw;
 }
 .woocommerce-product-details__short-description p{
+    position: absolute;
+    z-index: 3;
+    top: 40em;
+    left: -45vw;
     color: var(--light-gray);
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
-    padding: 0  5em 0 2em;
+    padding: 0  7em 0 1.5em;
     margin: 0;
     position: relative;
-    top: -1.5em;
+    width: 70%;
 }
 .icon-price{
-    width: 9em;
+    width:11em;
     position: absolute;
-    right: 3%;
-    top: 15.5em;
+    left: -11.5vw;
+    top: 36.3em;
+    height: auto!important;
+}
+.including-section{
+    position: relative;
+    left: -46vw;
+    width: 49vw;
+    top: 47em;
 }
 .item-text{
     width: 100%;
@@ -100,15 +124,20 @@ a:-webkit-any-link {
 
 }
 .category{
-    margin: 0 2rem;
     font-weight: 200;
     font-size: 1.5em;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
 }
+.including-items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+}
 .including-item{
     display: flex;
     justify-content: space-between;
-    margin: 10%;
+    width: 47%;
 }
 .including-item img{
     width: 6em;
@@ -116,11 +145,9 @@ a:-webkit-any-link {
     object-fit: cover;
     object-position: 50% 50%;
 }
-.including-item:nth-child(odd) img {
-    order: 2; /* Reverse the order for odd elements */
-}
+
 .including-item .title-description{
-    width: 60%;
+    width: 65%;
 }
 .including-item .title-description h4{
     margin: 0;
@@ -135,15 +162,17 @@ a:-webkit-any-link {
 .booking-section{
     background-color: #69402067;
     backdrop-filter: blur(10px);
-    border-radius: 25px;
     padding: 5% 10%;
+    width: 50%;
+    position: absolute;
+    right: 10%;
+    top: 15em;
 }
 .booking{
     text-align: center;
     font-size: 1.5em;
     margin: .5em;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
-
 }
 .time{
     margin: 0;
@@ -259,24 +288,78 @@ input#wps_booking_single_calendar_form{
 :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button.alt:hover{
     background-color: var(--button-bg);
 }
+.woocommerce div.product div.images.woocommerce-product-gallery{
+    top: 10em;
+}
+.woocommerce div.product div.summary{
+    position: relative;
+}
+footer{
+   top: 100vh!important;
+}
+@media screen and (min-width:768px) and (max-width:1200px){
+    .woocommerce div.product p.price, .woocommerce div.product span.price{
+        left: -13vw;
+    }
+    .icon-price{
+        left: -14vw;
+    }
+    .item-bg{
+        height: 13em!important;
+    }
+}
 @media screen and (min-width:500px) and (max-width:768px){
+    .woocommerce div.product div.images img{
+        height: 15em;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    .woocommerce div.product div.images img{
+        height: 15em;
+        top: 0;
+        position: static;
+    }
+    .wpgs-for.slick-initialized, .wpgs-nav.slick-initialized{
+        top: 0;
+        left: auto!important;
+    }
     .top-bg-nav{
         display: none!important;
     }
+    .wpgs-for.slick-initialized, .wpgs-nav.slick-initialized {
+        width: auto!important;
+    }
     .item-bg{
         height: 11em!important;
+        left: auto!important;
+        position: absolute!important;
+        top: 13em!important;
+        backdrop-filter: blur(10px);
+        z-index: -1!important;
+        width: 100%!important;
+        object-fit: cover;
+        object-position: 50% 0;
+        backdrop-filter: blur(5px)!important;
+        left: auto!important;
+    }
+    .including-section{
+        position: static;
+        width: auto;
+        padding: 5%;
     }
     .item-text{
         margin: 1.5rem 0;
     }
+    .including-items{
+        margin: 0 2em;
+    }
     .including-item {
-        margin: 1rem 2rem;
-        width: 36.7%;
+        width: 45%;
+        margin: 1.5em 0;
     }
     .including-items{
         display: flex;
         justify-content: space-between;
-        width: 100%;
         flex-wrap: wrap;
     }
     .including-item img{
@@ -304,11 +387,77 @@ input#wps_booking_single_calendar_form{
     .mbfw-date-picker-section {
         max-width: 100%;
     }
+    .booking-section{
+        background-color: #69402067;
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 5% 10%;
+        width: auto;
+        position: static;
+    }
+    .woocommerce div.product div.images.woocommerce-product-gallery{
+        top: 0;
+    }
+    .woocommerce div.product div.summary{
+        top: 0;
+        position: static;
+    }
+    .woocommerce-product-details__short-description p{
+        left: 0;
+        color: var(--light-gray);
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+        padding: 0  5em 0 2em;
+        margin: 0;
+        position: relative;
+        top: -1.5em;
+    }
+    .woocommerce div.product p.price, .woocommerce div.product span.price{
+        position: absolute;
+        z-index: 2;
+        top: 8em;
+        right: 6%!important;
+        color: var(--light-gray);
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+        left: auto!important;            }
+    .icon-price{
+        width: 9em;
+        position: absolute;
+        right: 3%;
+        top: 15.5em;
+        left: auto!important;       
+    }
+    .woocommerce div.product .product_title{
+        position: relative;
+        z-index: 2;
+        top: -0.7em;
+        left: 0.7em;
+        width: 90%;
+        color: var(--light-gray);
+        font-size: 1.5em;
+        font-weight: 300;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0);
+    
+    }
 }
 
 @media screen and (max-width:500px){
+    .woocommerce div.product div.images img{
+        height: auto;
+        top: 0;
+        position: static;
+    }
+    .wpgs-for.slick-initialized, .wpgs-nav.slick-initialized{
+        top: 0;
+        left: auto!important;
+    }
     .top-bg-nav{
         display: none!important;
+    }
+    .wpgs-for.slick-initialized, .wpgs-nav.slick-initialized {
+        width: auto!important;
     }
     .woocommerce div.product div.images .woocommerce-product-gallery__trigger{
         display: none!important;
@@ -353,15 +502,17 @@ input#wps_booking_single_calendar_form{
         color: #00000000!important;
     }
     .item-bg{
-        position: absolute;
-        top: 13em;
+        position: absolute!important;
+        top: 13em!important;
         backdrop-filter: blur(10px);
-        z-index: -1;
-        width: 100%;
+        z-index: -1!important;
+        width: 100%!important;
         object-fit: cover;
         height: 13em!important;
         object-position: 50% 0;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px)!important;
+        left: auto!important;
+
     }
     .woocommerce div.product .product_title{
         position: relative;
@@ -379,11 +530,13 @@ input#wps_booking_single_calendar_form{
         position: absolute;
         z-index: 2;
         top: 8em;
-        right: 6%;
+        right: 6%!important;
         color: var(--light-gray);
         font-size: 1.5em;
         font-weight: 300;
         text-shadow: 4px 4px 8px rgba(0, 0, 0);
+        left: auto!important;        
+
     }
     .woocommerce-product-details__short-description p{
         color: var(--light-gray);
@@ -393,12 +546,18 @@ input#wps_booking_single_calendar_form{
         margin: 0;
         position: relative;
         top: -1.5em;
+        left: 0;
     }
     .icon-price{
         width: 9em;
         position: absolute;
         right: 3%;
         top: 15.5em;
+        left: auto!important;        
+    }
+    .including-section{
+        position: static;
+        width: auto;
     }
     .item-text{
         width: 100%;
@@ -413,10 +572,14 @@ input#wps_booking_single_calendar_form{
         font-size: 1.5em;
         text-shadow: 4px 4px 8px rgba(0, 0, 0);
     }
+    .including-items{
+        width: auto;
+    }
     .including-item{
         display: flex;
         justify-content: space-between;
         margin: 2em;
+        width: 100%;
     }
     .including-item img{
         width: 7em;
@@ -445,7 +608,10 @@ input#wps_booking_single_calendar_form{
         backdrop-filter: blur(10px);
         border-radius: 25px;
         padding: 5% 10%;
+        width: auto;
+        position: static;
     }
+   
     .booking{
         text-align: center;
         font-size: 1.5em;
@@ -538,5 +704,12 @@ input#wps_booking_single_calendar_form{
     }
     input#wps_booking_single_calendar_form {
         width: 95%!important;
+    }
+    .woocommerce div.product div.images.woocommerce-product-gallery{
+        top: 0!important;
+    }
+    .woocommerce div.product div.summary{
+        top: 0!important;
+        position: static!important;
     }
 }

@@ -133,6 +133,12 @@
      function add_price_image_to_woocommerce_product() {
         echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/product-price.svg" alt="Price logo">';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_price_image_to_woocommerce_product');
+
+    // Including item div
+    function add_including_div_woocommerce_product() {
+        echo '<div class="including-section">';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_including_div_woocommerce_product');
+
     // Including item text
     function add_item_text_to_woocommerce_product() {
         echo '<h2 class="item-text">Including</h2>';    }
@@ -172,14 +178,21 @@
             }
     
             // Display 'main-course' products
-            echo '<h3 class="category">Main Course:</h3>';
-            display_products_by_category($main_course_products);
+            if (!empty($main_course_products)) {
+                echo '<h3 class="category">Main Course:</h3>';
+                display_products_by_category($main_course_products);
+            }
     
-            // Display 'sides' products
-            echo '<h3 class="category">Sides:</h3>';
-            display_products_by_category($sides_products);
+            // Display 'sides' products if there are any
+            if (!empty($sides_products)) {
+                echo '<h3 class="category">Sides:</h3>';
+                display_products_by_category($sides_products);
+            }
         }
     }
+    
+    add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
+    
     
     function display_products_by_category($products) {
         echo '<div class="including-items">';
@@ -214,22 +227,12 @@
     
     add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
 
-    // Register custom menus
 
-    function register_custom_menus() {
-        register_nav_menus(
-            array(
-                'primary-menu' => __('Primary Menu', 'bustersworld'), // You can change 'Primary Menu' to your desired menu name
-            )
-        );
-    }
-    add_action('init', 'register_custom_menus');
+    function add_div_end_to_woocommerce_product() {
+        echo '</div>';    }
+    add_action('woocommerce_before_add_to_cart_form', 'add_div_end_to_woocommerce_product');
 
-    if (function_exists('pll_current_language') && pll_current_language() == 'da') {
-    wp_enqueue_style('danish-styles', get_template_directory_uri() . '/css/danish-styles.css');
-} else {
-    wp_enqueue_style('english-styles', get_template_directory_uri() . '/css/english-styles.css');
-}
+    
     function add_booking_section_to_woocommerce_product() {
         echo '<div class="booking-section">';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_booking_section_to_woocommerce_product');
