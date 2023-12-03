@@ -144,6 +144,9 @@ footer{
 .wc-block-components-order-summary .wc-block-components-order-summary-item__description .wc-block-components-product-metadata, .wc-block-components-order-summary .wc-block-components-order-summary-item__description p{
     width: 100%!important;
 }
+.for-checkout{
+    box-shadow: 0 0 1em 0.5em #cfa18569;
+}
 .title {
     display: flex!important;
     position: fixed;

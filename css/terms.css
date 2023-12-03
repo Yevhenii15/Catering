@@ -2,7 +2,7 @@
     position: static;
    }
    body{
-       background-image: url('http://bbqcatering.dk/wp-content/uploads/2023/12/productimg-35.webp')!important;
+       background-image: url('../assets/bg.webp')!important;
        margin: 0 0!important;
        background-color: rgba(0, 0, 0, 0.68);
        width: 100%;
@@ -79,7 +79,7 @@
            width: 6em!important;
        }
        body{
-           background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
+           background-image: url('../assets/bg.webp')!important;
            margin: 0 7%!important;
            /* background-color: rgba(0, 0, 0, 0.68); */
            width: 86%;

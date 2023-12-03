@@ -1,6 +1,7 @@
 .woocommerce img, .woocommerce-page img{
     height: 10em;
 }
+
 .woocommerce ul.products{
     position: relative;
     top: 16em;

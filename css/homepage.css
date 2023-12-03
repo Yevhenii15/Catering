@@ -30,7 +30,7 @@ background-image: url('../assets/bg.webp')!important;
 }
 .titles h2 {
   letter-spacing: 0.1em;
-  line-height: 1em;
+  line-height: 0.8em;
   font-size: 5em;
 }
 .titles h1 {
@@ -156,14 +156,16 @@ footer{
   padding: 0;
   gap: 0.5em!important;
   }
-  footer{
-    bottom: 1%;
-  }
+
+  .titles h2 {
+    font-size: 0.8em;
+    line-height: 0.8em;
+    }
 }
 @media screen and (max-width: 900px) and (max-height: 900px) {
   a.logo img{
     width: 5em;
-    margin-top: 1em;
+    
     margin-right: 1.5em;
   }
   .desktop-header .logo{
@@ -174,9 +176,9 @@ footer{
   .wave-mobile {
     display: block;
     position: absolute;
-    top: 6%;
+    top: 8%;
     width: 100%;
-    height: 16em;
+    height: 12em;
     object-fit: cover;
     object-position: 50% 0;
     backdrop-filter: blur(5px);
@@ -197,32 +199,33 @@ footer{
   }
   .titles {
     position: absolute;
-    top: 20%;
     left:0;
     font-size: 1em;
   }
   .titles h2 {
-  font-size: 2.5em;
+  font-size: 1.8em;
+  letter-spacing: 1px;
   }
   .titles h1 {
-    font-size: 1.5em;
+    font-size: 1.3em;
+    letter-spacing: 1px;
   }
   nav a{
     margin: 0 40%
   }
   a.menu{
   position: relative;
-  top: -1em;
+  top: .3em;
   padding: 0;
-  width: auto;
+  width: 50%;
   }
   .menu p{
-  padding: 0 70%;
+  padding: 0 1em;
   margin: 0 0.2em;
   font-size: 1.4em ;
   }
   a.menu img{
-    width: 180%;
+    width: 100%;
   } 
 
   .btn {
@@ -230,11 +233,11 @@ footer{
   }
   .btn a {
     width: auto; /* Reset width for smaller screens */
-    padding:.2em 0.5em;
+    padding: 0 .5em;
   }
   
   ul {
-    margin-bottom: 4.5em;
+    margin-bottom: 6em;
   }
 }
 

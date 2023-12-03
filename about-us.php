@@ -32,7 +32,7 @@ $section_5_paragraph = get_field('section_5_paragraph');
             <span class="top-text-two"><?php echo esc_html($about_us_top_text_2); ?></span>
         </p>
 
-        <img src="http://bbqcatering.dk/wp-content/uploads/2023/12/productimg-29.jpg" class="fixed-img" alt="">
+        <img src="http://bbqcatering.dk/wp-content/uploads/2023/12/productimg-29.webp" class="fixed-img" alt="">
 
 <div class="about-us flex-col" >
 

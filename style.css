@@ -114,6 +114,7 @@ footer .terms{
   height: 10em;
   object-fit: cover;
   object-position: 50% 0;
+  box-shadow: 0 0 1em 0.5em #cfa18569;
 }
 @media screen and (max-width: 900px) {
   /* Mobile header */
