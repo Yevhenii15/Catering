@@ -25,7 +25,7 @@ $section_5_title = get_field('section_5_title');
 $section_5_paragraph = get_field('section_5_paragraph');
 
 ?>
-    <img class="top-bg-nav"src="<?php echo esc_url($about_us_top_img['url']); ?>" alt="about-us-top-img" >
+    <img class="top-bg-nav"src="<?php echo esc_url($about_us_top_img['url']); ?>" alt="" >
 
         <p class="title">
             <span class="top-text-one"><?php echo esc_html($about_us_top_text); ?></span>

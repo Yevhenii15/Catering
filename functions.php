@@ -19,7 +19,7 @@
         if (is_page('about-us')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/about-us.css');
         }
-        if (is_page('shop')) {
+        if (is_page('menus')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/shop.css');
         }
         if (is_product()) {
@@ -58,7 +58,7 @@
 
     // Adding top image and title to woocommerce shop
     function add_top_image_and_title_to_woocommerce_shop() {
-        echo '<img class="top-bg-nav" src="' . get_template_directory_uri() . '/assets/top-menu.png" alt="Background for menu page">';
+        echo '<img class="top-bg-nav" src="' . get_template_directory_uri() . '/assets/topmenu.webp" alt="Background for menu page">';
         echo '<p class="title"><span class="top-text-one">Savor the Flavor,</span><span class="top-text-two">Explore Our Menus</span></p>';
     }
     add_action('woocommerce_before_shop_loop', 'add_top_image_and_title_to_woocommerce_shop');
@@ -280,7 +280,7 @@
 
     // Adding top image to woocommerce product
     function add_top_image_to_woocommerce_product() {
-        echo '<img class="top-bg-nav" src="' . get_template_directory_uri() . '/assets/top-menu.png" alt="Background for menu page">';
+        echo '<img class="top-bg-nav" src="' . get_template_directory_uri() . '/assets/topmenu.webp" alt="Background for menu page">';
     }
     add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
     

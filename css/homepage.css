@@ -1,6 +1,6 @@
 /* Background Styles */
 body {
-background-image: url('http://cateringbbq.local/wp-content/uploads/2023/11/bg-grills.png')!important;
+background-image: url('http://bbqcatering.dk/wp-content/uploads/2023/12/productimg-35.webp')!important;
 }
 .desktop-header{
   display: block!important;
@@ -149,7 +149,7 @@ footer{
   position: absolute!important;
 }
 /* Media Queries - Mobile */
-@media screen and (max-width: 900px) and (max-height: 750px) {
+@media screen and (max-width: 900px){
   ul{
   position: relative;
   top: 2em;

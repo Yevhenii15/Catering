@@ -23,7 +23,7 @@
         </a>
         <nav>
             <ul>
-                <a href="<?php echo get_site_url(); ?>/shop" class="menu ">
+                <a href="<?php echo get_site_url(); ?>/menus" class="menu ">
                 <?php if (is_front_page()) : ?>
                     <!-- Code to display images for the home page -->
                     <img class="top" src="<?php echo get_template_directory_uri(); ?>/assets/Menu-Top.svg" alt="">
@@ -53,7 +53,7 @@
                 <button class="dropbtn"><img src="<?php echo get_template_directory_uri(); ?>/assets/dropdown-icon.svg" alt=""></button>
                 <div class="dropdown-content">
                     <div class="style">
-                        <a href="<?php echo get_site_url(); ?>/shop" class="menu">Menu</a>
+                        <a href="<?php echo get_site_url(); ?>/menus" class="menu">Menu</a>
                         <a href="<?php echo get_site_url(); ?>/about">Who we are</a>
                         <a href="<?php echo get_site_url(); ?>/contact">Contact Us</a>
                     </div>

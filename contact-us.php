@@ -8,7 +8,7 @@ get_header();
 $phone = get_field('phone');
 
 ?>
-<img class="top-bg-nav" src="http://bbqcatering.dk/wp-content/uploads/2023/11/top-about-1.png" alt="Background for menu page">
+<img class="top-bg-nav" src="<?php echo get_template_directory_uri(); ?>/assets/topfire.webp" alt="Background for menu page">
 <p class="title"><span class="top-text-one">Contact us</span><span class="top-text-two">Get in touch</span></p>
 <section>
     <div class="phone">
