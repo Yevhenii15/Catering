@@ -149,6 +149,7 @@ body {
   }
   footer{
     position: absolute!important;
+    bottom: -2%;
   
   }
   @media screen and (max-width: 900px) and (max-height: 750px) {
@@ -157,6 +158,9 @@ body {
     top: 2em;
     padding: 0;
     gap: 0.5em!important;
+    }
+    footer{
+      bottom: 1%;
     }
   }
   @media screen and (max-width: 900px) and (max-height: 900px) {
@@ -234,6 +238,9 @@ body {
       width: auto; /* Reset width for smaller screens */
       padding:.2em 0.5em;
   
+    }
+    footer{
+      bottom: -1%;
     }
    }
   
