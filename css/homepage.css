@@ -1,6 +1,6 @@
 /* Background Styles */
 body {
-background-image: url('http://bbqcatering.dk/wp-content/uploads/2023/12/productimg-35.webp')!important;
+background-image: url('../assets/bg.webp')!important;
 }
 .desktop-header{
   display: block!important;
