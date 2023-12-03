@@ -323,7 +323,7 @@ function custom_redirect_after_checkout( $order_id ) {
 }
 add_action( 'woocommerce_thankyou', 'custom_redirect_after_checkout', 10, 1 );
 
-// Display a notification on the home page if an order has been placed
+/* // Display a notification on the home page if an order has been placed
 function custom_order_placed_notification() {
     // Check if the session variable is set
     if ( WC()->session->get( 'order_placed' ) ) {
@@ -334,4 +334,4 @@ function custom_order_placed_notification() {
         WC()->session->__unset( 'order_placed' );
     }
 }
-add_action( 'wp', 'custom_order_placed_notification' );
+add_action( 'wp', 'custom_order_placed_notification' ); */
