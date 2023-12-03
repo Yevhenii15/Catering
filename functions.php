@@ -22,9 +22,6 @@
         if (is_page('shop')) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/shop.css');
         }
-        if (is_page('cart')) {
-            wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/cart.css');
-        }
         if (is_product()) {
             wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/product.css', array(), null, 'all');
         }
@@ -57,7 +54,7 @@
 
 
 
-    // Shop
+    // Shop page
 
     // Adding top image and title to woocommerce shop
     function add_top_image_and_title_to_woocommerce_shop() {
@@ -93,8 +90,6 @@
     // Remove related products
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
-   
-    
 
     // Remove upsell heading
     function remove_upsell_heading() {
@@ -114,15 +109,16 @@
 
     // Redirect to checkout if added to cart from single product page
     function redirect_to_checkout_if_cart_not_empty_single_product() {
-        // Check if on a single product page
-        if (is_product() && WC()->cart->get_cart_contents_count() > 0) {
-            wp_redirect(wc_get_checkout_url());
-            exit;
+        // make if the add to cart button is clicked
+        if (isset($_POST['add-to-cart'])) {
+            // Check if the cart is not empty
+            if (WC()->cart->get_cart_contents_count() > 0) {
+                wp_redirect(wc_get_checkout_url());
+                exit;
+            }
         }
     }
     add_action('template_redirect', 'redirect_to_checkout_if_cart_not_empty_single_product');
-    
-        
     
      // Adding background image to item woocommerce shop
      function add_bg_item_image_to_woocommerce_product() {
@@ -146,7 +142,7 @@
 
 
 
-
+    // Default products
     function display_related_products() {
         // Get the current product ID
         $product_id = get_the_ID();
@@ -179,13 +175,13 @@
     
             // Display 'main-course' products
             if (!empty($main_course_products)) {
-                echo '<h3 class="category">Main Course:</h3>';
+                echo '<h3 class="category">Main Course</h3>';
                 display_products_by_category($main_course_products);
             }
     
             // Display 'sides' products if there are any
             if (!empty($sides_products)) {
-                echo '<h3 class="category">Sides:</h3>';
+                echo '<h3 class="category">Sides</h3>';
                 display_products_by_category($sides_products);
             }
         }
@@ -193,7 +189,7 @@
     
     add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
     
-    
+    // Display products by category
     function display_products_by_category($products) {
         echo '<div class="including-items">';
         foreach ($products as $related_product) {
@@ -228,23 +224,27 @@
     add_action('woocommerce_before_add_to_cart_form', 'display_related_products');
 
 
+    // Adding div end
     function add_div_end_to_woocommerce_product() {
         echo '</div>';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_div_end_to_woocommerce_product');
 
-    
+    //  Adding booking section div
     function add_booking_section_to_woocommerce_product() {
         echo '<div class="booking-section">';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_booking_section_to_woocommerce_product');
     
+    // Adding booking Title 
     function add_booking_text_to_woocommerce_product() {
         echo '<h5 class="booking">Book</h5>';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_booking_text_to_woocommerce_product');
-
+    
+    // Adding date Title
     function add_time_text_to_woocommerce_product() {
         echo '<h6 class="time">When?</h6>';    }
     add_action('woocommerce_before_add_to_cart_form', 'add_time_text_to_woocommerce_product');
 
+    // Change text for exra services
     function change_div_text() {
         ?>
         <script type="text/javascript">
@@ -268,70 +268,57 @@
     add_action('wp_footer', 'change_div_text');
     
     
-
+    // Adding booking section close div
     function add_booking_section_close_to_woocommerce_product() {
         echo '</div>';    }
     add_action('woocommerce_after_single_product', 'add_booking_section_close_to_woocommerce_product');
 
 
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
     // Adding top image to woocommerce product
     function add_top_image_to_woocommerce_product() {
         echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
     }
     add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
+    
+    
 
-    function change_billing_address_text() {
-        ?>
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", function() {
-                // Replace 'Address & Personal Info' with the desired text
-                var newText = 'Address & Personal Info';
+    // Redirect user after successful order to home page and set a session variable
+    function custom_redirect_after_checkout( $order_id ) {
+        $order = wc_get_order( $order_id );
     
-                // Find the h2 element by its class name
-                var h2Element = document.querySelector('.wc-block-components-title.wc-block-components-checkout-step__title');
+        // Check if the order is valid
+        if ( ! $order ) {
+            return;
+        }
     
-                // Check if the h2 element is found
-                if (h2Element) {
-                    // Update the text content of the h2 element
-                    h2Element.textContent = newText;
-                }
-            });
-        </script>
-        <?php
+        // Set a session variable to indicate a successful order
+        WC()->session->set( 'order_placed', true );
+    
+        // Redirect to the home page
+        wp_redirect( home_url() );
+        exit;
     }
+    add_action( 'woocommerce_thankyou', 'custom_redirect_after_checkout', 10, 1 );
     
-    add_action('wp_footer', 'change_billing_address_text');
+    // Add JavaScript to show a popup message
+    function custom_show_popup_message() {
+        // Check if the order was placed successfully
+        if ( WC()->session->get( 'order_placed' ) ) {
+            ?>
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    // Display your popup message here
+                    alert("Got it! We'll confirm your booking shortly.");
+                });
+            </script>
+            <?php
+    
+            // Reset the session variable
+            WC()->session->set( 'order_placed', false );
+        }
+    }
+    add_action( 'wp_footer', 'custom_show_popup_message' );
     
 
-
-// Redirect user after successful order to home page and set a session variable
-function custom_redirect_after_checkout( $order_id ) {
-    $order = wc_get_order( $order_id );
-
-    // Check if the order is valid
-    if ( ! $order ) {
-        return;
-    }
-
-    // Set a session variable to indicate a successful order
-    WC()->session->set( 'order_placed', true );
-
-    // Redirect to the home page
-    wp_redirect( home_url() );
-    exit;
-}
-add_action( 'woocommerce_thankyou', 'custom_redirect_after_checkout', 10, 1 );
-
-/* // Display a notification on the home page if an order has been placed
-function custom_order_placed_notification() {
-    // Check if the session variable is set
-    if ( WC()->session->get( 'order_placed' ) ) {
-        // Display your notification message
-        wc_add_notice( 'Your order has been placed successfully!', 'success' );
-
-        // Unset the session variable to prevent showing the message on subsequent visits
-        WC()->session->__unset( 'order_placed' );
-    }
-}
-add_action( 'wp', 'custom_order_placed_notification' ); */

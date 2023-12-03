@@ -27,7 +27,7 @@ wp_reset_postdata();
                     <a href="<?php echo get_site_url(); ?>/copyrights">Copyrights</a>
                     <a href="<?php echo get_site_url(); ?>/privacy-policy">Privacy Policy</a>
                 </div>
-                <p>©2023 <span style="font-weight: bolder" >BBQ Catering West-Coast</span>
+                <p class="bottomtext" >©2023 <span  >BBQ Catering West-Coast</span>
             </footer>
         <?php wp_footer(); ?>
     </body>

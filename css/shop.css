@@ -52,87 +52,6 @@ p{
     top: 10.2em;
 }
 .woocommerce ul.products li.product .woocommerce-loop-product__title{
-position: relative;
-z-index: 2;
-top: -3.2em;
-left: 0.5em;
-width: 90%;
-color: var(--light-gray);
-font-size: 1.5em;
-font-weight: 300;
-text-shadow: 4px 4px 8px rgba(0, 0, 0);
-
-}
-.woocommerce ul.products li.product .price{
-position: absolute;
-z-index: 2;
-top: 51%;
-right: 6%;
-color: var(--light-gray);
-font-size: 1.5em;
-font-weight: 300;
-text-shadow: 4px 4px 8px rgba(0, 0, 0);
-}
-.icon-price{
-width: 30%;
-position: absolute;
-right: 3%;
-top: 48%;
-}
-:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button{
-background-color: rgba(255, 255, 255, 0);
-color: var(--light-gray);
-position: absolute;
-top: 75%;
-left: 2%;
-}
-footer{
-    bottom: -15em!important;
-}
-@media screen and (max-width:600px){
-    .woocommerce ul.products{
-        position: relative;
-        top: 12em;
-    }
-    .title{
-        position: fixed;
-        z-index: 7;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        font-size: 1.7rem;
-        top: 3em;
-        left: 0;
-    }
-    .top-text-one{
-        position: relative;
-        left: -5%;
-    }
-    .top-text-two{
-        position: relative;
-        left: 5%;
-    }
-    p{
-        margin: 0;
-    }
-    .woocommerce ul.products li.product a img{
-        height: 17em;
-        object-fit: cover;
-        object-position: 50% 50%;
-    }
-    .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product{
-        width: 100%;
-        margin: 0;
-    }
-
-    .item-bg{
-        backdrop-filter: blur(2px);
-        height: auto!important;
-        position: absolute;
-        top:10.2em;
-    }
-   .woocommerce ul.products li.product .woocommerce-loop-product__title{
     position: relative;
     z-index: 2;
     top: -3.2em;
@@ -142,31 +61,57 @@ footer{
     font-size: 1.5em;
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
-
-   }
-   .woocommerce ul.products li.product .price{
+}
+.woocommerce ul.products li.product .price{
     position: absolute;
     z-index: 2;
-    top: 7.3em;
+    top: 51%;
     right: 6%;
     color: var(--light-gray);
     font-size: 1.5em;
     font-weight: 300;
     text-shadow: 4px 4px 8px rgba(0, 0, 0);
-   }
-   .icon-price{
+}
+.icon-price{
     width: 30%;
     position: absolute;
     right: 3%;
     top: 48%;
-   }
-   :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button{
+}
+:where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button{
     background-color: rgba(255, 255, 255, 0);
     color: var(--light-gray);
     position: absolute;
     top: 75%;
     left: 2%;
-   }
+}
+footer{
+    bottom: -15em!important;
+}
+@media screen and (max-width:600px){
+    .woocommerce ul.products{
+        top: 12em;
+    }
+    .title{
+        z-index: 7;
+        align-items: center;
+        font-size: 1.7rem;
+        top: 3em;
+        left: 0;
+    }
+    .top-text-one{
+        left: -5%;
+    }
+    .top-text-two{
+        left: 5%;
+    }
+    .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product{
+        width: 100%;
+        margin: 0;
+    }
+   .woocommerce ul.products li.product .price{
+        top: 7.3em;
+    }
 }
 @media screen and (min-width: 600px) and (max-width:900px){
     .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product{
@@ -174,12 +119,8 @@ footer{
         margin: 0 1%;
     }
     .title{
-        position: fixed;
         z-index: 7;
-        display: flex;
-        flex-direction: column;
         align-items: center;
-        width: 100%;
         font-size: 2rem;
         top: 2em;
         left: 0;

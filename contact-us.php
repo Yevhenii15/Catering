@@ -8,13 +8,14 @@ get_header();
 $phone = get_field('phone');
 
 ?>
-
+<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/uploads/2023/11/top-about-1.png" alt="Background for menu page">
+<p class="title"><span class="top-text-one">Contact us</span><span class="top-text-two">Get in touch</span></p>
 <section>
     <div class="phone">
-        <h2>Call Us:</h2>       
+        <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/phone.svg" alt="">    
         <h2><?php echo $phone; ?></h2>
     </div>
-    <h4>-OR-</h4>
+
 
     <div id="contact-modal" class="contact-modal">
         <div class="modal-content">

@@ -48,6 +48,9 @@ a.logo img{
   z-index: 10;
   width: 100%;
 }
+.mobile-header{
+  display: none;
+}
 nav{
   margin-right: 5%;
 }
@@ -67,9 +70,6 @@ nav ul a, nav ul li a{
   text-decoration: none;
   font-size: 26px;
 } 
-.mobile-header{
-  display: none;
-}
 /* Footer */
 footer {
   position: relative;
@@ -78,7 +78,7 @@ footer {
   align-items: center; 
   width: 100%;
   flex-direction: column;
-  margin-bottom: 1%;
+  
 }
 footer .some{
   margin: 1.5em 0;
@@ -93,7 +93,6 @@ footer a{
   text-decoration: none;
   color: var(--light-gray);
   transition: 0.3s;
-
 }
 footer a:hover{
   color: var(--orange);
@@ -103,6 +102,10 @@ footer .terms{
   display: flex;
   justify-content: space-between;
   margin-right: 1%;
+}
+.bottomtext{
+ opacity: 0.5;
+ margin: 0;
 }
 .top-bg-nav{
   position: fixed;
@@ -215,12 +218,6 @@ footer .terms{
   }
   footer .terms a{
     font-size: 0.8em;
-  }
-  /* Style for top background img */
-  .top-bg-nav{
-    position: fixed;
-    z-index: 4;
-    width: 100%;
   }
 }
 

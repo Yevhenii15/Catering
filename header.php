@@ -34,7 +34,7 @@
             </ul>
         </nav>
     </header>
-
+    <p style="display: none" class="title"><span class="top-text-one">Checkout</span><span class="top-text-two">Only one step left</span></p>
     <?php
     if (!is_front_page()) { // Check if the current page is not the homepage
     ?>

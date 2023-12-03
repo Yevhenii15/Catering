@@ -21,7 +21,6 @@
    }
    .terms-section{
        display: flex;
-       align-content: center;
        justify-content: center;
        flex-wrap: wrap;    
    }
@@ -42,6 +41,7 @@
            display: flex;
            width: 60%;
            gap: 1.5em;
+           margin-bottom: 3em;
            flex-direction: column;  
     }
    }
@@ -102,6 +102,7 @@
        }
        .terms-section{
            padding: 0 7% 7% 7%;
+           height: 100vh;
            
        }
        footer{
