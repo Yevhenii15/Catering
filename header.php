@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book now our on-site catering service that brings exceptional food for an unforgettable event. BBQ Catering West-Coast. Book nu vores on-site catering service, der bringer enestående mad til en uforglemmelig begivenhed. BBQ Catering West-Coast.">
+
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="<?php bloginfo('name'); ?>">
+    <meta property="og:description" content="Book now our on-site catering service that brings exceptional food for an unforgettable event. BBQ Catering West-Coast. Book nu vores on-site catering service, der bringer enestående mad til en uforglemmelig begivenhed. BBQ Catering West-Coast.">
+    <meta property="og:image" content="URL_TO_YOUR_IMAGE">
+    <meta property="og:url" content="<?php echo get_permalink(); ?>">
+    <meta property="og:type" content="website">
+
     <title><?php bloginfo("name") ?></title>
     <?php wp_head() ?>
 </head>
