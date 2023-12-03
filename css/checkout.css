@@ -1,5 +1,5 @@
 .for-checkout{
-    background-image: url('http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-checkout.png');
+    background-image: url('../assets/top-checkout.png');
     position: fixed;
     height: 10em;
     z-index: 4;

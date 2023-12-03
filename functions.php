@@ -58,7 +58,7 @@
 
     // Adding top image and title to woocommerce shop
     function add_top_image_and_title_to_woocommerce_shop() {
-        echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
+        echo '<img class="top-bg-nav" src="' . get_template_directory_uri() . '/assets/top-menu.png" alt="Background for menu page">';
         echo '<p class="title"><span class="top-text-one">Savor the Flavor,</span><span class="top-text-two">Explore Our Menus</span></p>';
     }
     add_action('woocommerce_before_shop_loop', 'add_top_image_and_title_to_woocommerce_shop');
@@ -69,12 +69,12 @@
 
     // Adding background image to item woocommerce shop
     function add_bg_item_image_to_woocommerce_shop() {
-        echo '<img class="item-bg" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/item-bg.svg" alt="Background for item">';    }
+        echo '<img class="item-bg" src="' . get_template_directory_uri() . '/assets/item-bg.svg" alt="Background for item">';    }
     add_action('woocommerce_shop_loop_item_title', 'add_bg_item_image_to_woocommerce_shop');
 
     // Price img
     function add_price_image_to_woocommerce_shop() {
-        echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/price.svg" alt="Price logo">';    }
+        echo '<img class="icon-price" src="' . get_template_directory_uri() . '/assets/price.svg" alt="Price logo">';    }
     add_action('woocommerce_after_shop_loop_item', 'add_price_image_to_woocommerce_shop');
 
 
@@ -122,13 +122,15 @@
     
      // Adding background image to item woocommerce shop
      function add_bg_item_image_to_woocommerce_product() {
-        echo '<img class="item-bg" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/product-page-item-bg.svg" alt="Background for item">';    }
+        echo '<img class="item-bg" src="' . get_template_directory_uri() . '/assets/product-page-item-bg.svg" alt="Background for item">';    }
     add_action('woocommerce_single_product_summary', 'add_bg_item_image_to_woocommerce_product');
 
-     // Price img
-     function add_price_image_to_woocommerce_product() {
-        echo '<img class="icon-price" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/product-price.svg" alt="Price logo">';    }
+   // Price img
+    function add_price_image_to_woocommerce_product() {
+        echo '<img class="icon-price" src="' . get_template_directory_uri() . '/assets/product-price.svg" alt="Price logo">';
+    }
     add_action('woocommerce_before_add_to_cart_form', 'add_price_image_to_woocommerce_product');
+
 
     // Including item div
     function add_including_div_woocommerce_product() {
@@ -278,7 +280,7 @@
 
     // Adding top image to woocommerce product
     function add_top_image_to_woocommerce_product() {
-        echo '<img class="top-bg-nav" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/top-menu.png" alt="Background for menu page">';
+        echo '<img class="top-bg-nav" src="' . get_template_directory_uri() . '/assets/top-menu.png" alt="Background for menu page">';
     }
     add_action('woocommerce_before_single_product_summary', 'add_top_image_to_woocommerce_product');
     

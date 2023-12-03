@@ -19,16 +19,16 @@
     <div class="for-checkout"></div>
     <header class="desktop-header">          
        <a class="logo" href="<?php echo get_site_url(); ?>">
-            <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Logo.svg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/Logo.svg" alt="">
         </a>
         <nav>
             <ul>
                 <a href="<?php echo get_site_url(); ?>/shop" class="menu ">
                 <?php if (is_front_page()) : ?>
                     <!-- Code to display images for the home page -->
-                    <img class="top" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Top.svg" alt="">
+                    <img class="top" src="<?php echo get_template_directory_uri(); ?>/assets/Menu-Top.svg" alt="">
                     <p>Menu</p>
-                    <img class="bottom" src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Menu-Bottom.svg" alt="">
+                    <img class="bottom" src="<?php echo get_template_directory_uri(); ?>/assets/Menu-Bottom.svg" alt="">
                 <?php else : ?>
                     <!-- Code for other pages without images -->
                     <p>Menu</p>
@@ -50,7 +50,7 @@
     <header class="mobile-header">
         <div class="navs">
             <div class="dropdown">
-                <button class="dropbtn"><img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/dropdown-icon.svg" alt=""></button>
+                <button class="dropbtn"><img src="<?php echo get_template_directory_uri(); ?>/assets/dropdown-icon.svg" alt=""></button>
                 <div class="dropdown-content">
                     <div class="style">
                         <a href="<?php echo get_site_url(); ?>/shop" class="menu">Menu</a>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <a class="logo" href="<?php echo get_site_url(); ?>">
-                <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/Logo.svg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/Logo.svg" alt="">
             </a>
         </div>
     </header>

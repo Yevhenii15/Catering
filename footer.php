@@ -16,10 +16,10 @@ wp_reset_postdata();
             <footer>
                 <div class="some">
                     <a href="<?php echo ($facebook)?>">
-                        <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/facebook.svg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/facebook.svg" alt="">
                     </a>
                     <a href="<?php echo ($instagram)?>">
-                        <img src="http://cateringbbq.local/wp-content/themes/catering/Catering/assets/instagram.svg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/instagram.svg" alt="">
                     </a>
                 </div>
                 <div class="terms">
